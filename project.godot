@@ -15,10 +15,12 @@ run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://script/Global.gd"
+
 [display]
 
-window/size/viewport_width=576
-window/size/viewport_height=324
 window/size/initial_position_type=0
 window/canvas_textures/default_texture_filter=1
 

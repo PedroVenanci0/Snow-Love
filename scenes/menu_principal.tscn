@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://co0v55qy8yuhh"]
-
-[ext_resource type="Texture2D" uid="uid://bs05ffnhtqkyc" path="res://assets/tela de inicio/campo-de-neve-inverno.jpg" id="1_kj00o"]
+[gd_scene format=3 uid="uid://co0v55qy8yuhh"]
 
 [node name="menu_principal" type="Control"]
 layout_mode = 3
@@ -21,7 +19,6 @@ offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.60574, 1.04001)
-texture = ExtResource("1_kj00o")
 expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

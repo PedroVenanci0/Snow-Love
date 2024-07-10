@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgme7obfo2ryq"]
+[gd_scene load_steps=17 format=3 uid="uid://dgme7obfo2ryq"]
 
 [ext_resource type="Texture2D" uid="uid://cbtsf8m7gbhhs" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_wrtwv"]
 [ext_resource type="Texture2D" uid="uid://cg0r5cxyfkhpk" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Winter_entities (16 x 16).png" id="2_fbj48"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://co2p1vnvxy3ee" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/BG.png" id="8_4waxp"]
 [ext_resource type="Texture2D" uid="uid://cny7oski58p2n" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/Middle.png" id="9_1vmca"]
 [ext_resource type="Texture2D" uid="uid://b5dsckr80k2dp" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/Ground_01.png" id="11_y8mve"]
+[ext_resource type="PackedScene" uid="uid://dgrd25lfmuysk" path="res://scenes/bloco.tscn" id="12_034jt"]
 [ext_resource type="Texture2D" uid="uid://bcerd0wiu6o76" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/Foreground.png" id="12_i57sb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53sdi"]
@@ -419,7 +420,14 @@ scale = Vector2(0.500786, 0.457122)
 color = Color(1, 1, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_utsxu")]
-position = Vector2(88, 270)
+position = Vector2(231, 264)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(28, -28)
+ignore_rotation = false
+zoom = Vector2(5, 5)
+limit_left = 6
+limit_bottom = 290
 
 [node name="Estilingue" type="Sprite2D" parent="."]
 position = Vector2(117, 254)
@@ -427,14 +435,6 @@ texture = ExtResource("5_oq48y")
 
 [node name="carta" parent="." instance=ExtResource("6_0vk17")]
 position = Vector2(115, 244)
-
-[node name="Camera2D2" type="Camera2D" parent="carta"]
-position = Vector2(4.99999, -9.99995)
-scale = Vector2(5, 5)
-ignore_rotation = false
-zoom = Vector2(5, 5)
-limit_left = 6
-limit_bottom = 290
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
@@ -472,3 +472,13 @@ centered = false
 scale = Vector2(0.3, 0.302778)
 texture = ExtResource("12_i57sb")
 centered = false
+
+[node name="Bloco" parent="." instance=ExtResource("12_034jt")]
+position = Vector2(278, 142)
+collision_layer = 0
+mass = 1.0
+
+[node name="Bloco2" parent="." instance=ExtResource("12_034jt")]
+position = Vector2(279, 172)
+collision_layer = 0
+mass = 1.0
