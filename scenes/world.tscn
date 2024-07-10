@@ -437,6 +437,7 @@ limit_left = 6
 limit_bottom = 290
 
 [node name="BG" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(409.688, 109.211)
 
 [node name="sky" type="ParallaxLayer" parent="BG"]
 
