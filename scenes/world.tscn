@@ -476,10 +476,8 @@ centered = false
 
 [node name="Bloco" parent="." instance=ExtResource("12_034jt")]
 position = Vector2(278, 142)
-collision_layer = 0
 mass = 1.0
 
 [node name="Bloco2" parent="." instance=ExtResource("12_034jt")]
 position = Vector2(279, 172)
-collision_layer = 0
 mass = 1.0

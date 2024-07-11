@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dgrd25lfmuysk" path="res://scenes/bloco.tscn" id="7_w87sd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hngg5"]
-size = Vector2(311, 20)
+size = Vector2(572.5, 20)
 
 [node name="Slingshot" type="Node2D" node_paths=PackedStringArray("projectile")]
 position = Vector2(600, 265)
@@ -23,8 +23,8 @@ texture = ExtResource("2_i15c6")
 position = Vector2(7, -9)
 
 [node name="Line2D" type="Line2D" parent="SlingshotPart1/Point"]
-position = Vector2(144, -18)
-points = PackedVector2Array(-1, -1, -51, -1)
+visible = false
+points = PackedVector2Array(0, 0, -51, -1)
 width = 2.0
 default_color = Color(0.294118, 0.356863, 0.670588, 1)
 joint_mode = 2
@@ -40,9 +40,9 @@ texture = ExtResource("3_dvl6v")
 position = Vector2(-9, -9)
 
 [node name="Line2D" type="Line2D" parent="SlingshotPart2/Point"]
-position = Vector2(2, 1)
+visible = false
 scale = Vector2(1, 0.75)
-points = PackedVector2Array(-2, -1.33333, -37, -2.66667)
+points = PackedVector2Array(0, 0, -35, -1.33334)
 width = 2.0
 default_color = Color(0.301961, 0.65098, 1, 1)
 joint_mode = 2
@@ -55,26 +55,28 @@ position = Vector2(-73, 9)
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = -215.0
 offset_top = 5.0
-offset_right = 95.0
+offset_right = 356.0
 offset_bottom = 25.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-61, 15)
+position = Vector2(69.75, 15)
 shape = SubResource("RectangleShape2D_hngg5")
 
 [node name="LaunchableCardUpdate" parent="." instance=ExtResource("6_d5fbg")]
 position = Vector2(-130, -46)
-linear_velocity = Vector2(1000, 0)
-angular_velocity = 17.4533
 
 [node name="Bloco" parent="." instance=ExtResource("7_w87sd")]
-position = Vector2(-61, -22)
+position = Vector2(241, -22)
+mass = 10.0
 
 [node name="Bloco2" parent="." instance=ExtResource("7_w87sd")]
-position = Vector2(-60, 0)
+position = Vector2(242, 0)
+mass = 10.0
 
 [node name="Bloco3" parent="." instance=ExtResource("7_w87sd")]
-position = Vector2(-57, -46)
+position = Vector2(245, -46)
+mass = 10.0
 
 [node name="Bloco4" parent="." instance=ExtResource("7_w87sd")]
-position = Vector2(-56, -76)
+position = Vector2(246, -76)
+mass = 1.0
