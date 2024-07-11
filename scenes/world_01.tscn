@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgme7obfo2ryq"]
+[gd_scene load_steps=17 format=3 uid="uid://dgme7obfo2ryq"]
 
 [ext_resource type="Texture2D" uid="uid://cbtsf8m7gbhhs" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_tgehh"]
 [ext_resource type="Texture2D" uid="uid://cg0r5cxyfkhpk" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Winter_entities (16 x 16).png" id="2_skqpc"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b5dsckr80k2dp" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/Ground_01.png" id="9_5bl76"]
 [ext_resource type="Texture2D" uid="uid://bcerd0wiu6o76" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/Foreground.png" id="10_3v4ay"]
 [ext_resource type="PackedScene" uid="uid://bvxabrpqnao5k" path="res://scenes/scene de pause.tscn" id="11_00qbu"]
+[ext_resource type="PackedScene" uid="uid://cnk01usi4jhcc" path="res://scenes/hud_cards.tscn" id="12_2a8e3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53sdi"]
 texture = ExtResource("1_tgehh")
@@ -473,3 +474,5 @@ texture = ExtResource("10_3v4ay")
 centered = false
 
 [node name="SceneDePause" parent="." instance=ExtResource("11_00qbu")]
+
+[node name="HUD_cards" parent="." instance=ExtResource("12_2a8e3")]

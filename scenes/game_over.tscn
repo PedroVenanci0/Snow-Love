@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnd83nsc4ba31"]
+
+[ext_resource type="Texture2D" uid="uid://djayte3768086" path="res://assets/game_over/_4d7d0b74-1c4b-4788-9a1d-964cad4911f5.jpg" id="1_jyex5"]
+[ext_resource type="Texture2D" uid="uid://dmgk2qxtp3xx2" path="res://assets/game_over/coração.png" id="2_fa1re"]
+[ext_resource type="Texture2D" uid="uid://drb0yoosc4rbj" path="res://assets/game_over/moudura.png" id="3_biqww"]
+
+[node name="Game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -957.0
+offset_top = -541.0
+offset_right = 184.0
+offset_bottom = 543.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jyex5")
+expand_mode = 1
+
+[node name="corações" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="corações"]
+position = Vector2(648.692, 288.045)
+rotation = 0.271598
+scale = Vector2(0.6316, 0.598894)
+texture = ExtResource("2_fa1re")
+region_enabled = true
+region_rect = Rect2(273.45, 180.226, 177.156, 162.984)
+
+[node name="Sprite2D3" type="Sprite2D" parent="corações"]
+position = Vector2(353.389, 275.023)
+rotation = -0.369204
+scale = Vector2(0.561182, 0.549425)
+texture = ExtResource("2_fa1re")
+region_enabled = true
+region_rect = Rect2(273.45, 180.226, 177.156, 162.984)
+
+[node name="Sprite2D4" type="Sprite2D" parent="corações"]
+position = Vector2(498.683, 304.018)
+rotation = 0.121665
+scale = Vector2(0.374529, 0.375134)
+texture = ExtResource("2_fa1re")
+region_enabled = true
+region_rect = Rect2(273.45, 180.226, 177.156, 162.984)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(2368, -749)
+scale = Vector2(5.85973, 5.46053)
+texture = ExtResource("3_biqww")
+region_enabled = true
+region_rect = Rect2(150.021, 138.663, 221.445, 228.531)
