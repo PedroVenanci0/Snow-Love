@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pyg4is4rw2wh"
-path="res://.godot/imported/EstilingueParte1.png-f1d7eaa2306a7fe6eacb1b52a864b7d9.ctex"
+uid="uid://cmjdlh5jdyfg4"
+path="res://.godot/imported/carta gelada.png-d1461c9750fdffa6775da0152be71289.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/EstilingueParte1.png"
-dest_files=["res://.godot/imported/EstilingueParte1.png-f1d7eaa2306a7fe6eacb1b52a864b7d9.ctex"]
+source_file="res://assets/carta e estilingue/carta gelada.png"
+dest_files=["res://.godot/imported/carta gelada.png-d1461c9750fdffa6775da0152be71289.ctex"]
 
 [params]
 
