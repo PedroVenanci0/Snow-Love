@@ -9,5 +9,5 @@ func _process(delta):
 	]
 	
 	for line in lines:
-		if !projectile.launched:
+		if !projectile.dragging:
 			line.points[1] = projectile.global_position
