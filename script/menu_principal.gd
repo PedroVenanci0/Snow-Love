@@ -14,7 +14,7 @@ func _on_quit_gmae_pressed():
 	get_tree().quit()
 
 func _on_start_game_pressed():
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	get_tree().change_scene_to_file("res://scenes/world_01.tscn")
 
 func _on_cartas_desbloqueadas_pressed():
 	get_tree().change_scene_to_file("res://scenes/Mostrando_cartas.tscn")
