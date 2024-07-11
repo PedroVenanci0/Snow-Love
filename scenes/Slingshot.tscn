@@ -1,20 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwc81ubq57hyl"]
+[gd_scene load_steps=7 format=3 uid="uid://cwc81ubq57hyl"]
 
 [ext_resource type="Script" path="res://script/Slingshot.gd" id="1_l5v33"]
 [ext_resource type="Texture2D" uid="uid://pyg4is4rw2wh" path="res://assets/EstilingueParte1.png" id="2_i15c6"]
 [ext_resource type="Texture2D" uid="uid://cyk3uj7wsmoe" path="res://assets/EstilingueParte2.png" id="3_dvl6v"]
-[ext_resource type="Script" path="res://script/LaunchableCard.gd" id="4_ga362"]
-[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta gelada.png" id="5_6bqsd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_en440"]
-size = Vector2(5.54768, 4.35095)
+[ext_resource type="PackedScene" uid="uid://bx17gyp3v7exd" path="res://scenes/launchable_card_update.tscn" id="6_d5fbg"]
+[ext_resource type="PackedScene" uid="uid://dgrd25lfmuysk" path="res://scenes/bloco.tscn" id="7_w87sd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hngg5"]
 size = Vector2(311, 20)
 
 [node name="Slingshot" type="Node2D" node_paths=PackedStringArray("projectile")]
+position = Vector2(600, 265)
 script = ExtResource("1_l5v33")
-projectile = NodePath("LaunchableCard")
+projectile = NodePath("LaunchableCardUpdate")
 
 [node name="SlingshotPart1" type="Node2D" parent="."]
 
@@ -25,6 +23,7 @@ texture = ExtResource("2_i15c6")
 position = Vector2(7, -9)
 
 [node name="Line2D" type="Line2D" parent="SlingshotPart1/Point"]
+position = Vector2(144, -18)
 points = PackedVector2Array(-1, -1, -51, -1)
 width = 2.0
 default_color = Color(0.294118, 0.356863, 0.670588, 1)
@@ -50,26 +49,6 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="LaunchableCard" type="RigidBody2D" parent="."]
-position = Vector2(-173, -37)
-mass = 0.01
-script = ExtResource("4_ga362")
-
-[node name="Card" type="Sprite2D" parent="LaunchableCard"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_6bqsd")
-hframes = 4
-vframes = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LaunchableCard"]
-position = Vector2(-0.75, 0)
-scale = Vector2(1.17166, 0.85072)
-shape = SubResource("RectangleShape2D_en440")
-
-[node name="Camera2D" type="Camera2D" parent="LaunchableCard"]
-position = Vector2(54, 25)
-zoom = Vector2(3, 3)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-73, 9)
 
@@ -82,3 +61,20 @@ offset_bottom = 25.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-61, 15)
 shape = SubResource("RectangleShape2D_hngg5")
+
+[node name="LaunchableCardUpdate" parent="." instance=ExtResource("6_d5fbg")]
+position = Vector2(-130, -46)
+linear_velocity = Vector2(1000, 0)
+angular_velocity = 17.4533
+
+[node name="Bloco" parent="." instance=ExtResource("7_w87sd")]
+position = Vector2(-61, -22)
+
+[node name="Bloco2" parent="." instance=ExtResource("7_w87sd")]
+position = Vector2(-60, 0)
+
+[node name="Bloco3" parent="." instance=ExtResource("7_w87sd")]
+position = Vector2(-57, -46)
+
+[node name="Bloco4" parent="." instance=ExtResource("7_w87sd")]
+position = Vector2(-56, -76)
