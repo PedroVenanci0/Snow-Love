@@ -8,7 +8,7 @@ func _ready():
 	initialPos = position;
 
 func _process(delta):
-	set_deferred("scale", Vector2(0.5, 0.5))
+
 	if dragging == false:
 		pass
 		#global_position = Vector2(0.0, 10.0)
