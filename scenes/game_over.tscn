@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://djayte3768086" path="res://assets/game_over/_4d7d0b74-1c4b-4788-9a1d-964cad4911f5.jpg" id="1_jyex5"]
 [ext_resource type="Texture2D" uid="uid://dmgk2qxtp3xx2" path="res://assets/game_over/coração.png" id="2_fa1re"]
-[ext_resource type="Texture2D" uid="uid://drb0yoosc4rbj" path="res://assets/game_over/moudura.png" id="3_biqww"]
+[ext_resource type="Texture2D" uid="uid://blbhyvo6m2u0g" path="res://assets/construções pelo mapa/contrução_gelo_02.webp" id="3_jjywe"]
 
 [node name="Game_over" type="Control"]
 layout_mode = 3
@@ -55,8 +55,8 @@ region_enabled = true
 region_rect = Rect2(273.45, 180.226, 177.156, 162.984)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(2368, -749)
-scale = Vector2(5.85973, 5.46053)
-texture = ExtResource("3_biqww")
+position = Vector2(1103, 544.5)
+scale = Vector2(1, 4.41176)
+texture = ExtResource("3_jjywe")
 region_enabled = true
-region_rect = Rect2(150.021, 138.663, 221.445, 228.531)
+region_rect = Rect2(208.923, 515.749, 95.8273, 255.39)
