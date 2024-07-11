@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnk01usi4jhcc"]
+
+[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta e estilingue/carta gelada.png" id="1_1yl1g"]
+[ext_resource type="Script" path="res://script/hud_cards.gd" id="1_mjlkt"]
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="2_ke0u5"]
+
+[node name="HUD_cards" type="CanvasLayer"]
+script = ExtResource("1_mjlkt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(83.5, 69)
+scale = Vector2(3.71053, 3.75)
+texture = ExtResource("1_1yl1g")
+region_enabled = true
+region_rect = Rect2(202, 210, 38, 32)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 156.0
+offset_top = 40.0
+offset_right = 196.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.211765, 0.780392, 0.988235, 1)
+theme_override_colors/font_outline_color = Color(0.964706, 0.964706, 0.964706, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_ke0u5")
+theme_override_font_sizes/font_size = 70

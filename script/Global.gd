@@ -8,7 +8,7 @@ var cardsWords: Dictionary = {
 	"NumberCards_01": 2,
 	"NumberCards_02": 3,
 	"NumberCards_03": 4,
-}
+} 
 
 func _ready():
 	pass
