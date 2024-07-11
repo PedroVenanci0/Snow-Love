@@ -13,24 +13,16 @@ config_version=5
 config/name="Snow Love"
 run/main_scene="res://scenes/menu_principal.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/tela de inicio/coração gelado.png"
 
 [autoload]
 
 Global="*res://script/Global.gd"
 
 [display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/size/initial_position_type=0
 window/stretch/mode="viewport"
 window/canvas_textures/default_texture_filter=1
 "}[rendering]textures/canvas_textures/default_texture_filter"=0
 
 [input]
-
-pause_mode={
-"deadzone": 0.5,
-"events": []
-}
