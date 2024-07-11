@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://850s0q4v8b83"
-path="res://.godot/imported/Ice Elemental Sprite Sheet.png-727ac0bd52ed6ef7f1c005b144e4c0bf.ctex"
+uid="uid://cyk3uj7wsmoe"
+path="res://.godot/imported/EstilingueParte2.png-048a203365fc7b75c6a3cda3c973efa1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ice Elemental Sprite Sheet.png"
-dest_files=["res://.godot/imported/Ice Elemental Sprite Sheet.png-727ac0bd52ed6ef7f1c005b144e4c0bf.ctex"]
+source_file="res://assets/carta e estilingue/EstilingueParte2.png"
+dest_files=["res://.godot/imported/EstilingueParte2.png-048a203365fc7b75c6a3cda3c973efa1.ctex"]
 
 [params]
 

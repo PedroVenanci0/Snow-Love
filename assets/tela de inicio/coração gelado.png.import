@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmjdlh5jdyfg4"
-path="res://.godot/imported/carta gelada.png-86e5953fb5703024a77c81414cc7c1c2.ctex"
+uid="uid://bf2etkxqja02l"
+path="res://.godot/imported/coração gelado.png-53d59b6ac4e5f6d3f0bb918658c10b5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/carta gelada.png"
-dest_files=["res://.godot/imported/carta gelada.png-86e5953fb5703024a77c81414cc7c1c2.ctex"]
+source_file="res://assets/tela de inicio/coração gelado.png"
+dest_files=["res://.godot/imported/coração gelado.png-53d59b6ac4e5f6d3f0bb918658c10b5a.ctex"]
 
 [params]
 

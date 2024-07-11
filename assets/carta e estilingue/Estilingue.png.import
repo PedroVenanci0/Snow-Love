@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyk3uj7wsmoe"
-path="res://.godot/imported/EstilingueParte2.png-e3973ded4d0e8b0b846b8ba5bccecfb6.ctex"
+uid="uid://co3brg2s2cgke"
+path="res://.godot/imported/Estilingue.png-e66af2c78578f863f8970b2be10cfbe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/EstilingueParte2.png"
-dest_files=["res://.godot/imported/EstilingueParte2.png-e3973ded4d0e8b0b846b8ba5bccecfb6.ctex"]
+source_file="res://assets/carta e estilingue/Estilingue.png"
+dest_files=["res://.godot/imported/Estilingue.png-e66af2c78578f863f8970b2be10cfbe9.ctex"]
 
 [params]
 
