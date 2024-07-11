@@ -1,9 +1,24 @@
 extends Node2D
 
 @export var projectile : RigidBody2D
+
+## Estado do estilingue em que estamos segurando o clique.
 var holding: bool = false;
+
+## Guarda o instante que a carta foi arremessada.
 var launched: bool = false;
+
+## Arremessou a carta com sucesso
 var successful: bool = false;
+
+## Distancia max pra puxar o estilingue
+var slingshotMaxLength: float = 128.0;
+
+## Posição da corda
+var slingPos: Vector2 = Vector2.ZERO
+
+## Launch Direction
+var launchDir: Vector2 = Vector2.ZERO
 
 func _draw():
 	var points = [
@@ -13,9 +28,18 @@ func _draw():
 	for i in range(len(points)):
 		var point = points[i];
 		var _col = Color(0.0, 0.20 - 0.10 * int(i == 0), 0.95 - 0.30 * int(i == 0));
-		draw_line(point.position, projectile.position, _col, 4.0);
+		
+		var _destPos = projectile.position if !successful else Vector2(-20.0, 2.0)
+		slingPos = slingPos.lerp(_destPos, 0.20);
+		draw_line(point.position, slingPos, _col, 4.0);
+	
+	# Draw trajectory
+	if holding:
+		draw_line(Vector2.ZERO, Vector2.ZERO + launchDir * 12, Color.LIME, 4)
+	
 
 func _process(delta):
+	
 	# Atualizar função de desenho
 	queue_redraw();
 	
@@ -23,13 +47,9 @@ func _process(delta):
 	holding = Input.is_action_pressed("mouse_button");
 	
 	if Input.is_action_just_released("mouse_button") and !successful:
-		print("Catapimbas lá vai carta carai")
-		var _dragEnd = get_global_mouse_position()
-		var dir = position - _dragEnd;
-		projectile.apply_impulse(dir * 5)
-		successful = true;
-		launched = true;
-	
+		launchCard();
+		
+
 	# Posicionar carta no estilingue
 	if !holding and !launched and !successful:
 		projectile.global_position = position;
@@ -38,9 +58,31 @@ func _process(delta):
 		var _vector = position - get_global_mouse_position();
 		var _angle = _vector * -1;
 		_angle = _angle.angle();
-		var _l = min(_vector.length(), 64)
+		var _l = min(_vector.length(), slingshotMaxLength)
 		projectile.global_position.x = position.x + cos(_angle) * _l;
-		projectile.global_position.y = position.y + sin(_angle) * _l;		
+		projectile.global_position.y = position.y + sin(_angle) * _l;	
+		
+		# Atualizar launchDir para fins de desenho da trajetoria
+		launchDir = getLaunchDir()
 			
 	if launched:
 		launched = false;
+
+func getLaunchDir():
+	var _dragEnd = get_local_mouse_position()
+	var _dir = Vector2(0, -9) - _dragEnd;
+	#print("Dir: %s - %s " % [position, _dragEnd])	
+	return _dir
+
+func launchCard():
+	print("Catapimbas lá vai carta carai")
+	var _dir = getLaunchDir()
+	projectile.linear_velocity = Vector2.ZERO; 	
+	projectile.apply_impulse(_dir * 10)
+	successful = true;
+	launched = true;
+	
+	await get_tree().create_timer(2).timeout
+	successful = false
+	
+	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bx17gyp3v7exd"]
 
 [ext_resource type="Script" path="res://script/LaunchableCardUpdate.gd" id="1_8ybfg"]
-[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta gelada.png" id="2_cda3s"]
+[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta e estilingue/carta gelada.png" id="2_cda3s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fwsqg"]
 bounce = 0.21
