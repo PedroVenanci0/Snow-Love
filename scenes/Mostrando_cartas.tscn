@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4gx1bneo4j0k"]
+[gd_scene load_steps=11 format=3 uid="uid://b4gx1bneo4j0k"]
 
 [ext_resource type="Script" path="res://script/Mostrando_cartas.gd" id="1_3kvt7"]
 [ext_resource type="Texture2D" uid="uid://dep45oy3gj2fp" path="res://assets/tela de cartas/fundo.jpg" id="1_e35q2"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="5_crqko"]
 [ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta e estilingue/carta gelada.png" id="6_bkxnb"]
 [ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="7_1mxxe"]
+[ext_resource type="PackedScene" uid="uid://c88tia4dvha40" path="res://scenes/Carta_escrita.tscn" id="9_brwpe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7rcag"]
 shader = ExtResource("2_gfqww")
@@ -39,6 +40,7 @@ texture = ExtResource("1_e35q2")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_7rcag")
+layout_mode = 0
 offset_left = 3.0
 offset_right = 3831.0
 offset_bottom = 2278.0
@@ -125,7 +127,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("5_crqko")
 theme_override_font_sizes/font_size = 60
-text = "Cartas Desbloqueadas: "
+text = "unlocked cards:"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -136,10 +138,10 @@ offset_bottom = 191.0
 theme_override_colors/font_color = Color(0, 0.831373, 0.988235, 1)
 theme_override_fonts/font = ExtResource("5_crqko")
 theme_override_font_sizes/font_size = 60
-text = "Cartas Desbloqueadas: "
+text = "unlocked cards:"
 
 [node name="CartaGelada_world_01" type="Sprite2D" parent="."]
-modulate = Color(0.442911, 0.442911, 0.442911, 1)
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
 position = Vector2(280, 463)
 scale = Vector2(4.81429, 4.54167)
 texture = ExtResource("6_bkxnb")
@@ -162,13 +164,13 @@ texture = ExtResource("6_bkxnb")
 region_enabled = true
 region_rect = Rect2(203.123, 212.569, 35.2864, 24.4898)
 
-[node name="Return_enu" type="Button" parent="."]
+[node name="Return_menu" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 1506.0
-offset_top = 979.0
-offset_right = 1878.0
-offset_bottom = 1056.0
+offset_left = 42.0
+offset_top = 65.0
+offset_right = 414.0
+offset_bottom = 142.0
 theme = ExtResource("7_1mxxe")
 theme_override_colors/font_color = Color(0, 0.831373, 0.988235, 1)
 theme_override_constants/outline_size = 30
@@ -177,4 +179,38 @@ theme_override_font_sizes/font_size = 50
 text = "Menu Principal"
 flat = true
 
-[connection signal="pressed" from="Return_enu" to="." method="_on_return_enu_pressed"]
+[node name="ButtonCard_01" type="Button" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 415.0
+offset_right = 355.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 20
+flat = true
+
+[node name="ButtonCard_02" type="Button" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 679.0
+offset_right = 350.0
+offset_bottom = 777.0
+theme_override_font_sizes/font_size = 20
+flat = true
+
+[node name="ButtonCard_03" type="Button" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 411.0
+offset_right = 759.0
+offset_bottom = 509.0
+theme_override_font_sizes/font_size = 20
+flat = true
+
+[node name="carta" parent="." instance=ExtResource("9_brwpe")]
+offset_left = 996.0
+offset_top = 429.0
+offset_right = 996.0
+offset_bottom = 429.0
+
+[connection signal="pressed" from="Return_menu" to="." method="_on_return_enu_pressed"]
+[connection signal="pressed" from="ButtonCard_01" to="." method="_on_button_card_01_pressed"]

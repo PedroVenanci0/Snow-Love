@@ -78,7 +78,7 @@ func launchCard():
 	print("Catapimbas lá vai carta carai")
 	var _dir = getLaunchDir()
 	projectile.linear_velocity = Vector2.ZERO; 	
-	projectile.apply_impulse(_dir * 10)
+	projectile.apply_impulse(_dir * 100)
 	successful = true;
 	launched = true;
 	
