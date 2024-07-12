@@ -475,4 +475,4 @@ position = Vector2(107, 220)
 projectile = NodePath("../LaunchableCardUpdate")
 
 [node name="LaunchableCardUpdate" parent="." instance=ExtResource("13_b683t")]
-position = Vector2(134, 174)
+position = Vector2(108, 226)

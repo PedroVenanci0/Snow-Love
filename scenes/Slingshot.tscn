@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://pyg4is4rw2wh" path="res://assets/carta e estilingue/EstilingueParte1.png" id="2_i15c6"]
 [ext_resource type="Texture2D" uid="uid://cyk3uj7wsmoe" path="res://assets/carta e estilingue/EstilingueParte2.png" id="3_dvl6v"]
 
-[node name="Slingshot" type="Node2D" node_paths=PackedStringArray("projectile")]
+[node name="Slingshot" type="Node2D"]
 position = Vector2(600, 265)
 script = ExtResource("1_l5v33")
-projectile = NodePath("")
 
 [node name="SlingshotPart1" type="Node2D" parent="."]
 position = Vector2(3, 21)
 scale = Vector2(2, 2)
 
 [node name="Back" type="Sprite2D" parent="SlingshotPart1"]
+texture_filter = 1
 texture = ExtResource("2_i15c6")
 
 [node name="Point" type="Marker2D" parent="SlingshotPart1"]
@@ -33,6 +33,7 @@ position = Vector2(3, 21)
 scale = Vector2(2, 2)
 
 [node name="Front" type="Sprite2D" parent="SlingshotPart2"]
+texture_filter = 1
 texture = ExtResource("3_dvl6v")
 
 [node name="Point" type="Marker2D" parent="SlingshotPart2"]

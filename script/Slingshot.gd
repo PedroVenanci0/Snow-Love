@@ -12,7 +12,7 @@ var launched: bool = false;
 var successful: bool = false;
 
 ## Distancia max pra puxar o estilingue
-var slingshotMaxLength: float = 128.0;
+var slingshotMaxLength: float = 50.0;
 
 ## Posição da corda
 var slingPos: Vector2 = Vector2.ZERO
@@ -43,16 +43,18 @@ func _process(delta):
 	# Atualizar função de desenho
 	queue_redraw();
 	
-	# Get Input
-	holding = Input.is_action_pressed("mouse_button");
+	# Pega o Input
+	if !successful:
+		holding = Input.is_action_pressed("mouse_button");
+		Global.holding = holding
 	
 	if Input.is_action_just_released("mouse_button") and !successful:
 		launchCard();
 		
-
 	# Posicionar carta no estilingue
-	if !holding and !launched and !successful:
+	if !holding and !successful and !launched:
 		projectile.global_position = position;
+		
 	elif holding and !launched:
 		#projectile.global_position = get_global_mouse_position()
 		var _vector = position - get_global_mouse_position();
@@ -80,6 +82,7 @@ func launchCard():
 	projectile.linear_velocity = Vector2.ZERO; 	
 	projectile.apply_impulse(_dir * 10)
 	successful = true;
+	Global.sucessful = true
 	launched = true;
 	
 	await get_tree().create_timer(2).timeout

@@ -1,7 +1,8 @@
 extends Node
 
 var player: CharacterBody2D
-
+var sucessful : bool
+var holding : bool
 var numberCards = 0
 
 var cardsWords: Dictionary = {
