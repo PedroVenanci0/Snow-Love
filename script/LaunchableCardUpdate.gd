@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Card
 
 @onready var player = $"../Player"
 @onready var player_2 = $"../Player2"
@@ -39,9 +40,5 @@ func _input(event):
 		#var dir = dragStart - _dragEnd
 		#apply_impulse(dir * 5)
 
-func _on_body_entered(body):
-	if body.name == "player":
-		animated_sprite_2d.play("Happy")
-	if body.name == "player2":
-		animated_sprite_2d.play("Happy")
-		
+
+

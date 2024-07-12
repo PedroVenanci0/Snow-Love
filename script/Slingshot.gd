@@ -86,10 +86,13 @@ func launchCard():
 	projectile.apply_impulse(_dir * 10);
 
 	successful = true;
+	Global.numberCards -= 1
 	Global.sucessful = true;
 	launched = true;
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2.5).timeout
+	if Global.numberCards == 0:
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	successful = false
 	
 	

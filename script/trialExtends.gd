@@ -1,4 +1,4 @@
-extends "res://script/trial.gd"
+extends Trials
 
 func _get_position():
 	return get_parent().position
