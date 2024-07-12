@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bht4ua6k7nlh5"]
+[gd_scene load_steps=30 format=3 uid="uid://bht4ua6k7nlh5"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_mr4ox"]
 [ext_resource type="Texture2D" uid="uid://850s0q4v8b83" path="res://assets/player/Ice Elemental Sprite Sheet.png" id="2_j2xar"]
@@ -190,9 +190,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tqtus"]
-radius = 4.0
+radius = 3.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfx34"]
+size = Vector2(8, 8)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_mr4ox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -200,8 +204,17 @@ position = Vector2(1, -16)
 sprite_frames = SubResource("SpriteFrames_o6sih")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.174591
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_tqtus")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_hfx34")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
