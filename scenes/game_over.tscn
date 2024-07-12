@@ -100,30 +100,30 @@ region_rect = Rect2(208.923, 515.749, 95.8273, 255.39)
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 1213.0
-offset_top = 214.0
-offset_right = 1760.0
-offset_bottom = 277.0
+offset_left = 1283.0
+offset_top = 209.5
+offset_right = 1830.0
+offset_bottom = 272.5
 theme_override_colors/font_color = Color(0, 0.831373, 0.988235, 1)
 theme_override_constants/shadow_offset_y = 20
 theme_override_fonts/font = ExtResource("5_g2axc")
 theme_override_font_sizes/font_size = 70
-text = "Game Over L   ve"
+text = "End of L   ve"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1213.0
-offset_top = 214.0
-offset_right = 1760.0
-offset_bottom = 277.0
+offset_left = 1283.0
+offset_top = 209.5
+offset_right = 1830.0
+offset_bottom = 272.5
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("5_g2axc")
 theme_override_font_sizes/font_size = 70
-text = "Game Over L   ve"
+text = "End of L   ve"
 
 [node name="coracao" type="Sprite2D" parent="."]
-position = Vector2(1649, 244)
+position = Vector2(1586, 236.5)
 scale = Vector2(0.361702, 0.370588)
 texture = ExtResource("2_fa1re")
 region_enabled = true
