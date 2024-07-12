@@ -1,5 +1,11 @@
 extends RigidBody2D
 
+@onready var player = $"../Player"
+@onready var player_2 = $"../Player2"
+
+@onready var animated_sprite_2d = $AnimatedSprite2D
+
+
 var dragging 
 var dragStart = Vector2.ZERO;
 var initialPos = Vector2.ZERO;
@@ -21,6 +27,7 @@ func _process(delta):
 		position = initialPos;
 		linear_velocity = Vector2.ZERO;
 		
+		
 func _input(event):
 	pass
 	#if event.is_action_pressed("mouse_button") and !dragging:
@@ -32,3 +39,9 @@ func _input(event):
 		#var dir = dragStart - _dragEnd
 		#apply_impulse(dir * 5)
 
+func _on_body_entered(body):
+	if body.name == "player":
+		animated_sprite_2d.play("Happy")
+	if body.name == "player2":
+		animated_sprite_2d.play("Happy")
+		

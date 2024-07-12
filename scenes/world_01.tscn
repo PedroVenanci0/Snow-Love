@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dgme7obfo2ryq"]
+[gd_scene load_steps=21 format=3 uid="uid://dgme7obfo2ryq"]
 
 [ext_resource type="Texture2D" uid="uid://cbtsf8m7gbhhs" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_tgehh"]
 [ext_resource type="Texture2D" uid="uid://cg0r5cxyfkhpk" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Winter_entities (16 x 16).png" id="2_skqpc"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cnk01usi4jhcc" path="res://scenes/hud_cards.tscn" id="12_2a8e3"]
 [ext_resource type="PackedScene" uid="uid://bx17gyp3v7exd" path="res://scenes/launchable_card_update.tscn" id="13_b683t"]
 [ext_resource type="PackedScene" uid="uid://cwc81ubq57hyl" path="res://scenes/Slingshot.tscn" id="13_h71wn"]
+[ext_resource type="Texture2D" uid="uid://blbhyvo6m2u0g" path="res://assets/construções pelo mapa/contrução_gelo_02.webp" id="14_ql1qa"]
+[ext_resource type="Texture2D" uid="uid://bb8625sbhk3vc" path="res://assets/tela de cartas/3385744-calota-de-gelo-fixada-vetor-removebg-preview.png" id="15_2h06m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53sdi"]
 texture = ExtResource("1_tgehh")
@@ -399,11 +401,8 @@ shader_parameter/base_snow_speed = 0.01
 shader_parameter/additional_snow_speed = 0.08
 shader_parameter/slant = 0.0650001
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk6o7"]
-size = Vector2(18, 17)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bvsla"]
-radius = 10.7703
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg3pr"]
+size = Vector2(83.8123, 248.551)
 
 [node name="world_01" type="Node2D"]
 
@@ -411,6 +410,10 @@ radius = 10.7703
 position = Vector2(305, 167)
 ignore_rotation = false
 zoom = Vector2(3, 3)
+limit_left = -12
+limit_top = -219
+limit_right = 626
+limit_bottom = 310
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -326)
@@ -425,14 +428,27 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_x7vwq")
-offset_left = 3.0
-offset_right = 1150.0
-offset_bottom = 588.0
+offset_left = -10.0
+offset_top = -220.0
+offset_right = 1264.0
+offset_bottom = 292.0
+scale = Vector2(0.500786, 0.457122)
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_x7vwq")
+offset_left = -14.0
+offset_top = 2.0
+offset_right = 1262.0
+offset_bottom = 582.0
 scale = Vector2(0.500786, 0.457122)
 color = Color(1, 1, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_niov7")]
-position = Vector2(70, 246)
+position = Vector2(341, 57)
+
+[node name="Player2" parent="." instance=ExtResource("4_niov7")]
+position = Vector2(509, 153)
 
 [node name="BG" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2(409.688, 109.211)
@@ -441,6 +457,12 @@ scroll_offset = Vector2(409.688, 109.211)
 
 [node name="sky" type="Sprite2D" parent="BG/sky"]
 position = Vector2(-14, -12)
+scale = Vector2(0.333333, 0.332407)
+texture = ExtResource("6_y6oqs")
+centered = false
+
+[node name="sky2" type="Sprite2D" parent="BG/sky"]
+position = Vector2(-13, -220)
 scale = Vector2(0.333333, 0.332407)
 texture = ExtResource("6_y6oqs")
 centered = false
@@ -482,8 +504,63 @@ centered = false
 [node name="HUD_cards" parent="." instance=ExtResource("12_2a8e3")]
 
 [node name="Slingshot" parent="." node_paths=PackedStringArray("projectile") instance=ExtResource("13_h71wn")]
-position = Vector2(107, 220)
+position = Vector2(79, 98)
 projectile = NodePath("../LaunchableCardUpdate")
 
 [node name="LaunchableCardUpdate" parent="." instance=ExtResource("13_b683t")]
 
+[node name="ContruçãoGelo02" type="StaticBody2D" parent="."]
+position = Vector2(513, 167)
+rotation = -1.55504
+scale = Vector2(0.158933, 0.301838)
+
+[node name="detalhesNeve" type="Sprite2D" parent="ContruçãoGelo02"]
+position = Vector2(25.0717, -3.31445)
+rotation = 1.54087
+scale = Vector2(0.488681, 1.15651)
+skew = 0.021626
+texture = ExtResource("15_2h06m")
+region_enabled = true
+region_rect = Rect2(-0.909027, 226, 501.818, 68.1818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContruçãoGelo02"]
+position = Vector2(1.83459, -1.70837)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hg3pr")
+
+[node name="ContruçãoGelo04" type="Sprite2D" parent="ContruçãoGelo02"]
+position = Vector2(611.301, -572.858)
+rotation = -0.0183866
+scale = Vector2(1.01314, 0.961096)
+skew = 0.021626
+texture = ExtResource("14_ql1qa")
+region_enabled = true
+region_rect = Rect2(211.318, 520.773, 92.7273, 251.466)
+
+[node name="ContruçãoGelo03" type="StaticBody2D" parent="."]
+position = Vector2(343.349, 67.25)
+rotation = -1.55504
+scale = Vector2(0.158933, 0.301838)
+
+[node name="detalhesNeve2" type="Sprite2D" parent="ContruçãoGelo03"]
+position = Vector2(25.0716, -3.31421)
+rotation = 1.54087
+scale = Vector2(0.488681, 1.15651)
+skew = 0.021626
+texture = ExtResource("15_2h06m")
+region_enabled = true
+region_rect = Rect2(-0.909027, 226, 501.818, 68.1818)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ContruçãoGelo03"]
+position = Vector2(1.43903, -4.48291)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hg3pr")
+
+[node name="ContruçãoGelo05" type="Sprite2D" parent="ContruçãoGelo03"]
+position = Vector2(-629.793, 560.728)
+rotation = -0.0183866
+scale = Vector2(1.01314, 0.961096)
+skew = 0.021626
+texture = ExtResource("14_ql1qa")
+region_enabled = true
+region_rect = Rect2(211.318, 520.773, 92.7273, 251.466)
