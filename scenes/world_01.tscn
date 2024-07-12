@@ -486,35 +486,4 @@ position = Vector2(107, 220)
 projectile = NodePath("../LaunchableCardUpdate")
 
 [node name="LaunchableCardUpdate" parent="." instance=ExtResource("13_b683t")]
-position = Vector2(111, 202)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(309, 242)
-shape = SubResource("RectangleShape2D_vk6o7")
-
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(0, -21)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-position = Vector2(309, 242)
-shape = SubResource("RectangleShape2D_vk6o7")
-
-[node name="RigidBody2D3" type="RigidBody2D" parent="."]
-position = Vector2(-1, -45)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
-position = Vector2(309, 242)
-shape = SubResource("RectangleShape2D_vk6o7")
-
-[node name="RigidBody2D4" type="RigidBody2D" parent="."]
-position = Vector2(-22, -56)
-linear_velocity = Vector2(1000, 0)
-angular_velocity = 17.4533
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
-position = Vector2(234, 271)
-shape = SubResource("CircleShape2D_bvsla")
-
-[editable path="LaunchableCardUpdate"]

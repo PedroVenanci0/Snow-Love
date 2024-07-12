@@ -147,4 +147,3 @@ frame_progress = 0.745023
 position = Vector2(0, -1)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_pj35o")
-disabled = true
