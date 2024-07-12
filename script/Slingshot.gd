@@ -29,13 +29,13 @@ func _draw():
 		var point = points[i];
 		var _col = Color(0.0, 0.20 - 0.10 * int(i == 0), 0.95 - 0.30 * int(i == 0));
 		
-		var _destPos = projectile.position if !successful else Vector2(-20.0, 2.0)
+		var _destPos = projectile.position - position if !successful else Vector2(-20.0, 2.0)
 		slingPos = slingPos.lerp(_destPos, 0.20);
 		draw_line(point.position, slingPos, _col, 4.0);
 	
 	# Draw trajectory
 	if holding:
-		draw_line(Vector2.ZERO, Vector2.ZERO + launchDir * 12, Color.LIME, 4)
+		draw_line(Vector2.ZERO, Vector2.ZERO + launchDir * 2 , Color.RED, 4)
 	
 
 func _process(delta):

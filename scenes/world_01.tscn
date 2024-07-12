@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dgme7obfo2ryq"]
+[gd_scene load_steps=18 format=3 uid="uid://dgme7obfo2ryq"]
 
 [ext_resource type="Texture2D" uid="uid://cbtsf8m7gbhhs" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_tgehh"]
 [ext_resource type="Texture2D" uid="uid://cg0r5cxyfkhpk" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Winter_entities (16 x 16).png" id="2_skqpc"]
 [ext_resource type="Shader" path="res://shader/rain_and_snow_shader.gdshader" id="3_ilnu4"]
 [ext_resource type="PackedScene" uid="uid://bht4ua6k7nlh5" path="res://scenes/player.tscn" id="4_niov7"]
-[ext_resource type="PackedScene" uid="uid://cf5yfq7645ms2" path="res://scenes/carta.tscn" id="5_tsjrg"]
 [ext_resource type="Texture2D" uid="uid://c4abypyg6xj37" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/Sky.png" id="6_y6oqs"]
 [ext_resource type="Texture2D" uid="uid://co2p1vnvxy3ee" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/BG.png" id="7_u1s5n"]
 [ext_resource type="Texture2D" uid="uid://cny7oski58p2n" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/Middle.png" id="8_gvnuv"]
@@ -12,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bcerd0wiu6o76" path="res://assets/free-winter-holiday-game-backgrounds/PNG/BG_02/Layers/Foreground.png" id="10_3v4ay"]
 [ext_resource type="PackedScene" uid="uid://bvxabrpqnao5k" path="res://scenes/scene de pause.tscn" id="11_00qbu"]
 [ext_resource type="PackedScene" uid="uid://cnk01usi4jhcc" path="res://scenes/hud_cards.tscn" id="12_2a8e3"]
+[ext_resource type="PackedScene" uid="uid://bx17gyp3v7exd" path="res://scenes/launchable_card_update.tscn" id="13_b683t"]
+[ext_resource type="PackedScene" uid="uid://cwc81ubq57hyl" path="res://scenes/Slingshot.tscn" id="13_h71wn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53sdi"]
 texture = ExtResource("1_tgehh")
@@ -401,11 +402,9 @@ shader_parameter/slant = 0.0650001
 [node name="world_01" type="Node2D"]
 
 [node name="Camera2D2" type="Camera2D" parent="."]
-position = Vector2(241, 210)
+position = Vector2(305, 167)
 ignore_rotation = false
-zoom = Vector2(5, 5)
-limit_left = 6
-limit_bottom = 290
+zoom = Vector2(3, 3)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -326)
@@ -428,12 +427,6 @@ color = Color(1, 1, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_niov7")]
 position = Vector2(70, 246)
-
-[node name="Estilingue" type="Sprite2D" parent="."]
-position = Vector2(117, 254)
-
-[node name="carta" parent="." instance=ExtResource("5_tsjrg")]
-position = Vector2(116, 242)
 
 [node name="BG" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2(409.688, 109.211)
@@ -476,3 +469,10 @@ centered = false
 [node name="SceneDePause" parent="." instance=ExtResource("11_00qbu")]
 
 [node name="HUD_cards" parent="." instance=ExtResource("12_2a8e3")]
+
+[node name="Slingshot" parent="." node_paths=PackedStringArray("projectile") instance=ExtResource("13_h71wn")]
+position = Vector2(107, 220)
+projectile = NodePath("../LaunchableCardUpdate")
+
+[node name="LaunchableCardUpdate" parent="." instance=ExtResource("13_b683t")]
+position = Vector2(134, 174)
