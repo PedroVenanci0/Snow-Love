@@ -1,5 +1,7 @@
 extends Node
 
+var vitoria = false
+
 var player: CharacterBody2D
 var sucessful : bool
 var holding : bool
@@ -12,9 +14,6 @@ var cardsWords: Dictionary = {
 } 
 
 func _ready():
-	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	
 	var currentScene = get_tree().current_scene.name if get_tree().current_scene != null else ""
 	print(numberCards)
@@ -22,6 +21,11 @@ func _process(delta):
 	match currentScene:
 		"world_01": 
 			numberCards = cardsWords.get("NumberCards_01")
+		"world_02":
+			numberCards = cardsWords.get("NumberCards_02")
+	
+func _process(delta):
+	pass
 			
 	
 	# DEBUG: Atalho para reiniciar cena
