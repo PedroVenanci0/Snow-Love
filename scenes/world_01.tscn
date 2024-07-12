@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgme7obfo2ryq"]
+[gd_scene load_steps=20 format=3 uid="uid://dgme7obfo2ryq"]
 
 [ext_resource type="Texture2D" uid="uid://cbtsf8m7gbhhs" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_tgehh"]
 [ext_resource type="Texture2D" uid="uid://cg0r5cxyfkhpk" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Winter_entities (16 x 16).png" id="2_skqpc"]
@@ -399,6 +399,12 @@ shader_parameter/base_snow_speed = 0.01
 shader_parameter/additional_snow_speed = 0.08
 shader_parameter/slant = 0.0650001
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk6o7"]
+size = Vector2(18, 17)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvsla"]
+radius = 10.7703
+
 [node name="world_01" type="Node2D"]
 
 [node name="Camera2D2" type="Camera2D" parent="."]
@@ -480,4 +486,4 @@ position = Vector2(107, 220)
 projectile = NodePath("../LaunchableCardUpdate")
 
 [node name="LaunchableCardUpdate" parent="." instance=ExtResource("13_b683t")]
-position = Vector2(108, 226)
+

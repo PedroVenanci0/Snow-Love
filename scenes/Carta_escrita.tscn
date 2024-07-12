@@ -3,12 +3,27 @@
 [ext_resource type="Texture2D" uid="uid://bw64bdsticyn6" path="res://assets/tela de cartas/papel-de-carta-azul-corac3a7c3a3o-blog-artes-prontas.jpg" id="1_qd4ll"]
 [ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="2_t2cr7"]
 
-[node name="carta" type="Node2D"]
-position = Vector2(408, 310)
+[node name="carta" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 408.0
+offset_top = 310.0
+offset_right = 408.0
+offset_bottom = 310.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -407.0
+offset_top = -307.0
+offset_right = 1511.0
+offset_bottom = 786.0
 
 [node name="escritaCarta" type="Sprite2D" parent="."]
-position = Vector2(497, 224)
+position = Vector2(491, 115)
+scale = Vector2(1, 1.01672)
 texture = ExtResource("1_qd4ll")
+region_enabled = true
+region_rect = Rect2(0, 0, 720, 812.713)
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 153.0

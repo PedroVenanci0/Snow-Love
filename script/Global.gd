@@ -1,6 +1,6 @@
 extends Node
 
-var vitoria = false
+var cartasDesbloqueadas: int = 0
 
 var player: CharacterBody2D
 var sucessful : bool
@@ -27,7 +27,6 @@ func _ready():
 func _process(delta):
 	pass
 			
-	
 	# DEBUG: Atalho para reiniciar cena
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().reload_current_scene();

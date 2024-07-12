@@ -27,3 +27,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _process(delta):
+	if Global.cartasDesbloqueadas == 3:
+		get_tree().change_scene_to_file("res://scenes/vitoria.tscn")

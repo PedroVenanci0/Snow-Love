@@ -84,6 +84,7 @@ func launchCard():
 	var _dir = getLaunchDir();
 	projectile.linear_velocity = Vector2.ZERO;
 	projectile.apply_impulse(_dir * 10);
+
 	successful = true;
 	Global.sucessful = true;
 	launched = true;
