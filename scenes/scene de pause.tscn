@@ -1,37 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvxabrpqnao5k"]
+[gd_scene load_steps=3 format=3 uid="uid://bvxabrpqnao5k"]
 
 [ext_resource type="Script" path="res://script/scene de pause.gd" id="1_i3aw5"]
 [ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="1_s7jdm"]
-[ext_resource type="Shader" path="res://shader/rain_and_snow_shader.gdshader" id="2_ap4g1"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfade"]
-shader = ExtResource("2_ap4g1")
-shader_parameter/snow_amount = 200.0
-shader_parameter/near_snow_length = 0.01
-shader_parameter/far_snow_length = 0.01
-shader_parameter/near_snow_width = 1.0
-shader_parameter/far_snow_width = 0.775
-shader_parameter/near_snow_transparency = 0.295
-shader_parameter/far_snow_transparency = 0.675
-shader_parameter/snow_color = Color(1, 1, 1, 1)
-shader_parameter/base_snow_speed = 0.01
-shader_parameter/additional_snow_speed = 0.08
-shader_parameter/slant = 0.0650001
 
 [node name="SceneDePause" type="CanvasLayer"]
 script = ExtResource("1_i3aw5")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_xfade")
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1886.0
-offset_bottom = 1278.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.500786, 0.457122)
-color = Color(1, 1, 1, 0)
+color = Color(0, 0, 0, 0.333333)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 8
