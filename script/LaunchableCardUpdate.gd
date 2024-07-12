@@ -8,7 +8,11 @@ func _ready():
 	initialPos = position;
 
 func _process(delta):
-
+	if global_position.y > 271 and !Global.sucessful or Global.holding:
+		$CollisionShape2D.set_deferred("disabled", true)
+	elif global_position.y < 260 and Global.sucessful:
+		$CollisionShape2D.set_deferred("disabled", false)
+		
 	if dragging == false:
 		pass
 		#global_position = Vector2(0.0, 10.0)
