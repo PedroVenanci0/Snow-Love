@@ -165,10 +165,10 @@ region_rect = Rect2(203.123, 212.569, 35.2864, 24.4898)
 [node name="Return_enu" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 1516.0
-offset_top = 156.0
-offset_right = 1888.0
-offset_bottom = 233.0
+offset_left = 1506.0
+offset_top = 979.0
+offset_right = 1878.0
+offset_bottom = 1056.0
 theme = ExtResource("7_1mxxe")
 theme_override_colors/font_color = Color(0, 0.831373, 0.988235, 1)
 theme_override_constants/outline_size = 30
