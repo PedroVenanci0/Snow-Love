@@ -1,6 +1,6 @@
 extends Node
 
-var cartasDesbloqueadas: int = 0
+var cartasDesbloqueadas: int = 1
 
 var player: CharacterBody2D
 var sucessful : bool
@@ -14,7 +14,7 @@ var cardsWords: Dictionary = {
 } 
 
 func _ready():
-	
+		
 	var currentScene = get_tree().current_scene.name if get_tree().current_scene != null else ""
 	print(numberCards)
 	
@@ -23,9 +23,12 @@ func _ready():
 			numberCards = cardsWords.get("NumberCards_01")
 		"world_02":
 			numberCards = cardsWords.get("NumberCards_02")
+		"menu_principal":
+			numberCards = cardsWords.get("NumberCards_01")
 	
 func _process(delta):
 	pass
+			
 			
 	# DEBUG: Atalho para reiniciar cena
 	if Input.is_action_just_pressed("ui_cancel"):
