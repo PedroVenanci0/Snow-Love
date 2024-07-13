@@ -445,7 +445,7 @@ color = Color(1, 1, 1, 0)
 position = Vector2(341, 57)
 
 [node name="Player2" parent="." instance=ExtResource("4_niov7")]
-position = Vector2(509, 153)
+position = Vector2(323, 57)
 
 [node name="BG" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2(409.688, 109.211)

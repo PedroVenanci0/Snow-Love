@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgrd25lfmuysk"]
+[gd_scene load_steps=4 format=3 uid="uid://dgrd25lfmuysk"]
 
 [ext_resource type="Script" path="res://script/bloco.gd" id="1_ocrew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pls5"]
-size = Vector2(18, 18)
+size = Vector2(16, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukyp2"]
 
 [node name="Bloco" type="RigidBody2D"]
 mass = 1000.0
@@ -16,6 +18,15 @@ offset_right = 10.0
 offset_bottom = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2pls5")
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ukyp2")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
