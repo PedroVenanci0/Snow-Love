@@ -12,7 +12,7 @@ var launchDir: Vector2 = Vector2.ZERO;
 func _process(delta):
 	# Obter posicao do mouse
 	mousePos = get_global_mouse_position()
-	print("Mousepos: ", mousePos)
+	#print("Mousepos: ", mousePos)
 	
 	if pressed:
 		position = mousePos;
@@ -26,15 +26,15 @@ func _input(event):
 	if event is InputEventMouseButton:
 		# Saber se eu pressionei
 		if event.is_pressed():
-			print("segurando")	
+			#print("segurando")	
 			pressed = true;
 			launched = false;
 			originalPos = global_position;
-			print("Posição original: ", originalPos)
+			#print("Posição original: ", originalPos)
 			
 		# Ou se soltei
 		if event.is_released():
-			print("solto")	
+			#print("solto")
 			pressed = false;
 			
 			# Calcular a diferença entre a origem e o atual.
@@ -42,5 +42,5 @@ func _input(event):
 			launched = true;
 			launchDir = global_position - originalPos;
 			launchDir *= Vector2(-1, -1);
-			print("Soltei na posiçao: ", global_position)
-			print("Criando portanto um launchDir de ", launchDir)
+			#print("Soltei na posiçao: ", global_position)
+			#print("Criando portanto um launchDir de ", launchDir)

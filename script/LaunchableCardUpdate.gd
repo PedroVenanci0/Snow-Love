@@ -1,17 +1,29 @@
 extends RigidBody2D
 class_name Card
 
+@onready var line_2d = $Line2D
 @onready var player = $"../Player"
 @onready var player_2 = $"../Player2"
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+# Lista para armazenar os pontos do rastro
+var trail_points = []
 
+# Tempo entre atualizações dos pontos do rastro (em segundos)
+var trail_update_interval = 0.1
+var time_since_last_update = 0.0
+
+# Duração máxima do rastro (em segundos)
+var trail_duration = 2.0
 
 var dragging 
 var dragStart = Vector2.ZERO;
 var initialPos = Vector2.ZERO;
 
 func _ready():
+	# Inicialize o rastro com o ponto inicial
+	trail_points.append(global_position)
+	# Define a posição inicial da carta
 	initialPos = position;
 
 func _process(delta):
@@ -27,18 +39,18 @@ func _process(delta):
 	if position.y > 800:
 		position = initialPos;
 		linear_velocity = Vector2.ZERO;
+	
 		
 		
-func _input(event):
-	pass
-	#if event.is_action_pressed("mouse_button") and !dragging:
-		#dragging = true
-		#dragStart = get_global_mouse_position()
-	#if event.is_action_released("mouse_button") and dragging:
-		#dragging = false
-		#var _dragEnd = get_global_mouse_position()
-		#var dir = dragStart - _dragEnd
-		#apply_impulse(dir * 5)
 
 
 
+
+
+
+func _on_body_entered(body):
+	var direcao = -(body.position - self.position).normalized()
+	var velocidade_corpo = body.linear_velocity
+	var velocidade_relativa = velocidade_corpo - linear_velocity / 2
+	var impulso = direcao * velocidade_relativa.length() * mass
+	apply_impulse(impulso, Vector2.ZERO)

@@ -7,6 +7,7 @@ var sucessful : bool
 var holding : bool
 var numberCards = 0
 var playerLoving = 0
+var launched : bool
 
 func _ready():
 	pass
@@ -15,7 +16,6 @@ func _ready():
 	
 func _process(delta):
 	if playerLoving == 2:
-		#await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://scenes/vitoria.tscn")
 	
 	# DEBUG: Atalho para reiniciar cena
