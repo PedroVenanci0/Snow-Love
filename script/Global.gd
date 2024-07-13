@@ -16,7 +16,7 @@ func _ready():
 	
 func _process(delta):
 	if playerLoving == 2:
-		await get_tree().create_timer(1.5).timeout
+		#await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_file("res://scenes/vitoria.tscn")
 	
 	# DEBUG: Atalho para reiniciar cena
