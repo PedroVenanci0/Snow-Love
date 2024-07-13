@@ -91,7 +91,9 @@ func launchCard():
 	Global.sucessful = true;
 	launched = true;
 	await get_tree().create_timer(2.5).timeout
+	
 	if Global.numberCards == 0:
+		await get_tree().create_timer(2.5).timeout
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	successful = false
 	
