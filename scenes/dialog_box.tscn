@@ -19,13 +19,14 @@ offset_left = 85.0
 offset_top = 53.0
 offset_right = 403.0
 offset_bottom = 104.0
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0.521569, 0.858824, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_14xk6")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 50
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.05
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

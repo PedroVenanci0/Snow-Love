@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c1pa04jpbwj3e" path="res://scenes/dialog_box.tscn" id="17_sfxi5"]
 [ext_resource type="Texture2D" uid="uid://cn73vhqe6lte4" path="res://assets/dialogconteiner/New Piskel-1.png.png" id="18_ik46n"]
 [ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="19_yd8ol"]
-[ext_resource type="FontFile" uid="uid://6bjx631fkm5j" path="res://assets/fontes/RevMiniPixel.ttf" id="20_qmxgl"]
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="20_03quq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53sdi"]
 texture = ExtResource("2_imopq")
@@ -581,6 +581,7 @@ offset_top = -281.0
 offset_right = 173.0
 offset_bottom = 181.0
 color = Color(0, 0, 0, 0.505882)
+metadata/_edit_use_anchors_ = true
 
 [node name="dialogBox" parent="conteiner_box_dialog" instance=ExtResource("17_sfxi5")]
 position = Vector2(-142.614, -171.138)
@@ -595,37 +596,43 @@ offset_bottom = 370.0
 [node name="Text" parent="conteiner_box_dialog/dialogBox/TextureRect" index="0"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0732673
-anchor_top = -0.13369
-anchor_right = -0.0732673
-anchor_bottom = -0.13369
-
-[node name="SkipButton" type="Button" parent="conteiner_box_dialog"]
-offset_left = -91.7165
-offset_top = -60.8177
-offset_right = 12.2835
-offset_bottom = -33.8177
-theme = ExtResource("19_yd8ol")
-theme_override_colors/font_color = Color(0.647059, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("20_qmxgl")
-theme_override_font_sizes/font_size = 16
-text = "Continuar"
-flat = true
+anchor_left = -0.0851485
+anchor_top = -0.171123
+anchor_right = -0.0851485
+anchor_bottom = -0.171123
 
 [node name="ContinueButton" type="Button" parent="conteiner_box_dialog"]
-offset_left = -12.0945
-offset_top = -61.5249
-offset_right = 109.906
-offset_bottom = -29.5249
+visible = false
+offset_left = -0.503939
+offset_top = -53.7459
+offset_right = 250.496
+offset_bottom = 0.254112
+scale = Vector2(0.3, 0.3)
 theme = ExtResource("19_yd8ol")
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("20_qmxgl")
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("20_03quq")
+theme_override_font_sizes/font_size = 50
 text = "Me ensine"
 flat = true
 
-[connection signal="pressed" from="conteiner_box_dialog/SkipButton" to="." method="_on_skip_button_pressed"]
+[node name="SkipButton" type="Button" parent="conteiner_box_dialog"]
+visible = false
+offset_left = -80.6299
+offset_top = -55.1602
+offset_right = 165.37
+offset_bottom = -1.16024
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("19_yd8ol")
+theme_override_colors/font_color = Color(0.647059, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.521569, 0.858824, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("20_03quq")
+theme_override_font_sizes/font_size = 50
+text = "Continue
+"
+flat = true
+
 [connection signal="pressed" from="conteiner_box_dialog/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="conteiner_box_dialog/SkipButton" to="." method="_on_skip_button_pressed"]
 
 [editable path="conteiner_box_dialog/dialogBox"]

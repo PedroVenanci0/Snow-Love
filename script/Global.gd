@@ -1,6 +1,6 @@
 extends Node
 
-var cartasDesbloqueadas: int = 1
+var cartasDesbloqueadas: int = 0
 
 var player: CharacterBody2D
 var sucessful : bool

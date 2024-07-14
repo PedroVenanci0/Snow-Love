@@ -10,19 +10,19 @@ extends Node2D
 @onready var player_2 = $Player2
 
 func _ready():
+	
 	Global.playerInTheScene = 0
 	Global.numberCards = 4
+	get_tree().paused = true
 
 func _process(delta):
-	if conteiner_box_dialog.global_position.y >= 250:
-		conteiner_box_dialog.global_position.y -= 0.2
-
-	#if conteiner_box_dialog.global_position.y == 250:
-		#skip_button.visible = true
-		#continue_button.visible = true
+	pass
 
 func _on_skip_button_pressed():
 	pass 
 
 func _on_continue_button_pressed():
 	conteiner_box_dialog.visible = false
+	await get_tree().create_timer(0.1).timeout
+	get_tree().paused = false
+
