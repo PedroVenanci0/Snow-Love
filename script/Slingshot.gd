@@ -76,7 +76,7 @@ func getLaunchDir():
 	var _dragEnd = get_local_mouse_position();
 	_dragEnd.x = clamp(get_local_mouse_position().x, 0 - _size, 0 + _size);
 	_dragEnd.y = clamp(get_local_mouse_position().y, 0 - _size, 0 + _size);
-	var _dir = Vector2(0, -9) - _dragEnd;
+	var _dir = Vector2(0, -10) - _dragEnd;
 	#print("Dir: %s - %s " % [position, _dragEnd])
 	return _dir;
 
