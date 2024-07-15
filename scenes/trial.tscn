@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://xd2bt63smyso"]
-
-[ext_resource type="Script" path="res://script/trial.gd" id="1_qnt1r"]
-
-[node name="Trial" type="Line2D"]
-script = ExtResource("1_qnt1r")
-MaxLenght = 10
