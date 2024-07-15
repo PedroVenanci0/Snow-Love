@@ -81,6 +81,9 @@ func getLaunchDir():
 	return _dir;
 
 func launchCard():
+	
+	var current_scene: String = get_tree().current_scene.name
+	
 	#print("Catapimbas lá vai carta carai");
 	var _dir = getLaunchDir();
 	projectile.linear_velocity = Vector2.ZERO;
@@ -92,7 +95,7 @@ func launchCard():
 	launched = true;
 	await get_tree().create_timer(2.5).timeout
 	
-	if Global.numberCards == 0:
+	if Global.numberCards == 0 and current_scene != "Tutorial":
 		await get_tree().create_timer(2.5).timeout
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	successful = false

@@ -15,6 +15,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="Label" parent="TextureRect"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 85.0
 offset_top = 53.0
 offset_right = 403.0
