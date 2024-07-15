@@ -44,6 +44,8 @@ func state_animation():
 
 func _on_area_2d_body_entered(body):
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
-	Global.playerLoving += 2
+	Global.playerLoving += 1
 	colliding = true
+	Global.acertouTutorial = true
+	
 

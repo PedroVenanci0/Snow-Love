@@ -21,8 +21,4 @@ func _process(delta):
 func _on_skip_button_pressed():
 	pass 
 
-func _on_continue_button_pressed():
-	conteiner_box_dialog.visible = false
-	await get_tree().create_timer(0.1).timeout
-	get_tree().paused = false
 

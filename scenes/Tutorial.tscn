@@ -612,7 +612,8 @@ theme = ExtResource("19_yd8ol")
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("20_03quq")
 theme_override_font_sizes/font_size = 50
-text = "Me ensine"
+text = "Continue
+"
 flat = true
 
 [node name="SkipButton" type="Button" parent="conteiner_box_dialog"]
@@ -628,11 +629,27 @@ theme_override_colors/font_hover_color = Color(0.521569, 0.858824, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("20_03quq")
 theme_override_font_sizes/font_size = 50
-text = "Continue
+text = "Skip
+
 "
 flat = true
 
+[node name="ProximoNivelButton" type="Button" parent="conteiner_box_dialog"]
+visible = false
+offset_left = -52.4093
+offset_top = -53.7459
+offset_right = 487.591
+offset_bottom = 26.2541
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("19_yd8ol")
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 80
+text = "Próximo Nivel"
+flat = true
+
 [connection signal="pressed" from="conteiner_box_dialog/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="conteiner_box_dialog/ContinueButton" to="conteiner_box_dialog/dialogBox" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="conteiner_box_dialog/SkipButton" to="." method="_on_skip_button_pressed"]
 
 [editable path="conteiner_box_dialog/dialogBox"]
