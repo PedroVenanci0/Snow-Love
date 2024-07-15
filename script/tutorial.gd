@@ -13,12 +13,15 @@ func _ready():
 	
 	Global.playerInTheScene = 0
 	Global.numberCards = 4
+	await get_tree().create_timer(0.3).timeout
 	get_tree().paused = true
 
 func _process(delta):
 	pass
 
 func _on_skip_button_pressed():
+	pass
+
+
+func _on_proximo_nivel_button_pressed():
 	pass 
-
-

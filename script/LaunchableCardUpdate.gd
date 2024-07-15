@@ -39,13 +39,6 @@ func _process(delta):
 	if position.y > 800:
 		position = initialPos;
 		linear_velocity = Vector2.ZERO;
-	
-		
-		
-
-
-
-
 
 
 func _on_body_entered(body):
