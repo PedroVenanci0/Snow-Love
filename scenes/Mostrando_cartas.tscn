@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4gx1bneo4j0k"]
+[gd_scene load_steps=10 format=3 uid="uid://b4gx1bneo4j0k"]
 
 [ext_resource type="Script" path="res://script/Mostrando_cartas.gd" id="1_3kvt7"]
 [ext_resource type="Texture2D" uid="uid://dep45oy3gj2fp" path="res://assets/tela de cartas/fundo.jpg" id="1_e35q2"]
 [ext_resource type="Shader" path="res://shader/rain_and_snow_shader.gdshader" id="2_gfqww"]
 [ext_resource type="Texture2D" uid="uid://bb8625sbhk3vc" path="res://assets/tela de cartas/3385744-calota-de-gelo-fixada-vetor-removebg-preview.png" id="3_7krvh"]
-[ext_resource type="Texture2D" uid="uid://drde36wya31am" path="res://assets/tela de cartas/fundo_aviso.jpg" id="4_yoy1n"]
 [ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="5_crqko"]
 [ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta e estilingue/carta gelada.png" id="6_bkxnb"]
 [ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="7_1mxxe"]
-[ext_resource type="PackedScene" uid="uid://c88tia4dvha40" path="res://scenes/Carta_escrita.tscn" id="9_brwpe"]
+[ext_resource type="PackedScene" uid="uid://b16isugcku6h" path="res://scenes/Carta_escrita.tscn" id="9_brwpe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7rcag"]
 shader = ExtResource("2_gfqww")
@@ -72,50 +71,6 @@ position = Vector2(1693, 63)
 texture = ExtResource("3_7krvh")
 region_enabled = true
 region_rect = Rect2(0, 53.8102, 503.289, 166.908)
-
-[node name="moldura_aviso" type="Node2D" parent="."]
-visible = false
-
-[node name="FundoAviso" type="Sprite2D" parent="moldura_aviso"]
-position = Vector2(1040, 480.5)
-scale = Vector2(1.37908, 1.32108)
-texture = ExtResource("4_yoy1n")
-
-[node name="3385744-calota-de-gelo-fixada-vetor-removebg-preview" type="Sprite2D" parent="moldura_aviso"]
-position = Vector2(871, 781)
-texture = ExtResource("3_7krvh")
-region_enabled = true
-region_rect = Rect2(-1.82544, 21.6, 502.187, 200.582)
-
-[node name="3385744-calota-de-gelo-fixada-vetor-removebg-preview2" type="Sprite2D" parent="moldura_aviso"]
-position = Vector2(1214, 781)
-texture = ExtResource("3_7krvh")
-region_enabled = true
-region_rect = Rect2(-1.82544, 21.6, 502.187, 200.582)
-
-[node name="3385744-calota-de-gelo-fixada-vetor-removebg-preview3" type="Sprite2D" parent="moldura_aviso"]
-position = Vector2(626.556, 468.857)
-rotation = -1.60013
-scale = Vector2(1.06096, 1)
-texture = ExtResource("3_7krvh")
-region_enabled = true
-region_rect = Rect2(3.29855, 214.861, 497.794, 95.1665)
-
-[node name="3385744-calota-de-gelo-fixada-vetor-removebg-preview4" type="Sprite2D" parent="moldura_aviso"]
-position = Vector2(1451, 479)
-rotation = 1.55163
-scale = Vector2(1.06096, 1)
-texture = ExtResource("3_7krvh")
-region_enabled = true
-region_rect = Rect2(3.29855, 214.861, 497.794, 95.1665)
-
-[node name="3385744-calota-de-gelo-fixada-vetor-removebg-preview5" type="Sprite2D" parent="moldura_aviso"]
-position = Vector2(1031, 223)
-rotation = 0.00207359
-scale = Vector2(1.73496, 1)
-texture = ExtResource("3_7krvh")
-region_enabled = true
-region_rect = Rect2(3.29855, 214.861, 497.794, 95.1665)
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -206,11 +161,12 @@ offset_bottom = 509.0
 theme_override_font_sizes/font_size = 20
 flat = true
 
-[node name="carta" parent="." instance=ExtResource("9_brwpe")]
-offset_left = 996.0
-offset_top = 429.0
-offset_right = 996.0
-offset_bottom = 429.0
+[node name="carta_01" parent="." instance=ExtResource("9_brwpe")]
+offset_left = 804.0
+offset_top = 457.0
+offset_right = 804.0
+offset_bottom = 457.0
+scale = Vector2(1e-05, 1e-05)
 
 [connection signal="pressed" from="Return_menu" to="." method="_on_return_enu_pressed"]
 [connection signal="pressed" from="ButtonCard_01" to="." method="_on_button_card_01_pressed"]

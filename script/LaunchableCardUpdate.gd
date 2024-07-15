@@ -32,14 +32,7 @@ func _process(delta):
 		$CollisionShape2D.set_deferred("disabled", true)
 	elif global_position.y < 260 and Global.sucessful:
 		$CollisionShape2D.set_deferred("disabled", false)
-		
-	if dragging == false:
-		pass
-		#global_position = Vector2(0.0, 10.0)
-	
-	if position.y > 800:
-		position = initialPos;
-		linear_velocity = Vector2.ZERO;
+    
 		
 	if  Global.sucessful and trail == null:
 		show_trail()
@@ -47,8 +40,15 @@ func _process(delta):
 		trail.visible = true
 	else:
 		trail.visible = false
-		
+
+	if dragging == false:
+		pass
+		#global_position = Vector2(0.0, 10.0)
 	
+	if position.y > 800:
+		position = initialPos;
+		linear_velocity = Vector2.ZERO;
+
 func _on_body_entered(body):
 	var direcao = -(body.position - self.position).normalized()
 	var velocidade_corpo = body.linear_velocity

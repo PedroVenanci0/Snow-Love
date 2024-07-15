@@ -22,13 +22,37 @@ var msg_queues: Dictionary = {
 		
 		"Usando o cursos do mouse, click e arraste\nna tela para impulsionar a carta em direção\nos bonecos de neve, encontrados nas\nplataformas.",
 		
-		"Ao acertar os Bonecos de Neve, perceba que aparece\num coração acima de sua cabeça significando\nque o acertou, seu obejtivo é acertar\n os dois bonecos para enfim passar de fase.",
+		"Ao acertar os Bonecos de Neve, perceba que\naparece um coração acima de sua cabeça\nsignificando que o acertou, seu obejtivo\né acertar os dois bonecos para enfim\npassar de fase.",
 		
-		"Parabens, vc finalmente conseguiu passar pelo Tutorial!!!\nPressione (Novo nivel para avançar.)"
+		"Parabens, vc finalmente conseguiu passar\npelo Tutorial!!!\nPressione (Novo nivel para avançar.)"
 	
 	],
-	"CartaDesbloqueadas": [
-		"Mensagem 1 da cena 2...",
+	"MostrandoCartas": [
+		"
+
+Num cantinho de inverno, onde a neve cai suave,
+
+
+Uma bola de neve encontrou uma carta, um suave enxave.
+
+
+Era um bilhete de amor, escrito com tinta de calor,
+
+
+Que derreteu seu coração gelado, sem temor.
+
+
+Deslizou pela salinha, à procura do autor querido,
+
+
+Encontrou outra bola de neve, o destino foi cumprido.
+
+
+Juntos, deslizaram pelo espaço, sem medo de se quebrar,
+
+
+Com cartas de amor que os aqueceram, num eterno amar.",
+
 		"Mensagem 2 da cena 2..."
 	],
 	
@@ -39,7 +63,6 @@ func _ready():
 	show_message()
 	
 func _process(delta):
-	
 	var current_scene: String = get_tree().current_scene.name
 	
 	var conteiner_box_dialog = get_parent()
@@ -47,20 +70,14 @@ func _process(delta):
 	var skipButton = conteiner_box_dialog.get_node("SkipButton")
 	var continueButton = conteiner_box_dialog.get_node("ContinueButton")
 	
-	if conteiner_box_dialog.global_position.y >= 250:
-		conteiner_box_dialog.global_position.y -= 0.2
+	if current_scene == "Tutorial":
+		if conteiner_box_dialog.global_position.y >= 220:
+			conteiner_box_dialog.global_position.y -= 0.2
 
 	if msg_queues[current_scene].size() == 3:
 		skipButton.visible = true
 		continueButton.visible = true
 	
-func _input(event):
-	
-	var current_scene: String = get_tree().current_scene.name
-	
-	if event is InputEventKey and event.is_action_pressed("ui_accept") and msg_queues[current_scene].size() == 4 and text.visible_characters == text.text.length():
-		show_message()
-		
 	if Global.acertouTutorial == true and verificacaoUnica == 1:
 		show_message()
 		Global.acertouTutorial == false
@@ -70,17 +87,22 @@ func _input(event):
 		show_message()
 		if text.visible_characters == text.text.length():
 			proximo_nivel_button.visible = true
+	
+func _input(event):
+	
+	var current_scene: String = get_tree().current_scene.name
+	
+	if event is InputEventKey and event.is_action_pressed("ui_accept") and msg_queues[current_scene].size() == 4 and text.visible_characters == text.text.length():
+		show_message()
 
 func show_message():
 	
 	var current_scene: String = get_tree().current_scene.name
-	
-	print(msg_queues[current_scene].size())
 #
 	#if not timer.is_stopped():
 		#text.visible_characters = text.text.length()
 		#return
-#
+		
 	if msg_queues[current_scene].size() == 0:
 		#hide()
 		return
@@ -101,14 +123,10 @@ func _on_continue_button_pressed():
 	
 	if text.visible_characters == text.text.length():
 		
-		text.set("theme_override_colors/font_color", Color(1, 0, 0))
-		
 		show_message()
 		
 		skip_button.visible = false
 		continue_button.visible = false
 		
 		await get_tree().create_timer(0.1).timeout
-		
 		get_tree().paused = false
-		color_rect.visible = false

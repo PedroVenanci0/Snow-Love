@@ -25,7 +25,7 @@ func _process(delta):
 func state_animation():
 	var _state = "Idle"
 	coração.visible = false
-	if die:
+	if die and get_tree().current_scene.name != "Tutorial":
 		await get_tree().create_timer(3.2).timeout
 		_state = "sad"
 		animated_sprite_2d.play("sad")
