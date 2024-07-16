@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dugxn5ug0161i"]
+
+[ext_resource type="AudioStream" uid="uid://cmtn2uycki0mm" path="res://assets/Music/Amor Pixelado.mp3" id="1_tyrqh"]
+[ext_resource type="AudioStream" uid="uid://bivqxh41ryav5" path="res://assets/Music/Amor de Neve.mp3" id="2_poauq"]
+[ext_resource type="AudioStream" uid="uid://bwxfofvryvjpj" path="res://assets/Music/Boneco de Neve do Amor.mp3" id="3_qou0q"]
+
+[node name="Sounds" type="Node2D"]
+
+[node name="amor_pixelado" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_tyrqh")
+
+[node name="Amor_gelado" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_poauq")
+
+[node name="Boneco_de_neve" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qou0q")

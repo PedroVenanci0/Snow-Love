@@ -4,6 +4,8 @@ extends Node2D
 
 @onready var skip_button = $conteiner_box_dialog/SkipButton
 @onready var continue_button = $conteiner_box_dialog/ContinueButton
+@onready var amor_gelado = $Sounds/Amor_gelado
+
 
 
 @onready var player = $Player
@@ -15,6 +17,7 @@ func _ready():
 	Global.numberCards = 4
 	await get_tree().create_timer(0.3).timeout
 	get_tree().paused = true
+	amor_gelado.playing = true
 
 func _process(delta):
 	pass

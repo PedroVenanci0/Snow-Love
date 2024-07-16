@@ -1,10 +1,12 @@
 extends Node2D
+@onready var boneco_de_neve = $Sounds/Boneco_de_neve
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.playerInTheScene = 0
 	Global.numberCards = 10
+	boneco_de_neve.playing = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,8 +1,9 @@
 extends Control
+@onready var amor_pixelado = $Sounds/amor_pixelado
+
 
 func _ready():
-	pass # Replace with function body.
-
+	amor_pixelado.playing = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

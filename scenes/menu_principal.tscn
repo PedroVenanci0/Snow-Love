@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://co0v55qy8yuhh"]
+[gd_scene load_steps=8 format=3 uid="uid://co0v55qy8yuhh"]
 
 [ext_resource type="Script" path="res://script/menu_principal.gd" id="1_fb65p"]
 [ext_resource type="Texture2D" uid="uid://dwh703nqocjf" path="res://assets/tela de inicio/bg.jpeg" id="2_xeujx"]
 [ext_resource type="Shader" path="res://shader/rain_and_snow_shader.gdshader" id="3_kn5e7"]
 [ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="4_xgp1d"]
 [ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="5_pi8yq"]
+[ext_resource type="PackedScene" uid="uid://dugxn5ug0161i" path="res://scenes/sounds.tscn" id="6_17jeb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_duslc"]
 shader = ExtResource("3_kn5e7")
@@ -157,6 +158,17 @@ theme_override_fonts/font = ExtResource("4_xgp1d")
 theme_override_font_sizes/font_size = 200
 text = "Snow L    ve"
 
+[node name="Sounds" parent="." instance=ExtResource("6_17jeb")]
+
+[node name="amor_pixelado" parent="Sounds" index="0"]
+volume_db = -3.962
+autoplay = true
+
+[node name="Boneco_de_neve" parent="Sounds" index="2"]
+volume_db = -11.886
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Cartas desbloqueadas" to="." method="_on_cartas_desbloqueadas_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit Gmae" to="." method="_on_quit_gmae_pressed"]
+
+[editable path="Sounds"]
