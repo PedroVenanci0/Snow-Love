@@ -18,3 +18,6 @@ func _on_menu_principal_pressed():
 
 func _on_quit_game_pressed():
 	get_tree().quit()
+
+func _on_button_pressed():
+	Global.TransitonToScene(Global.restart)

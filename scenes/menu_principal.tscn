@@ -101,6 +101,7 @@ theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("4_xgp1d")
 theme_override_font_sizes/font_size = 25
 text = "unlocked cards"
+flat = true
 
 [node name="Quit Gmae" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 texture_filter = 1

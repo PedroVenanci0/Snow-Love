@@ -129,6 +129,14 @@ offset_top = 344.0
 offset_right = 1573.0
 offset_bottom = 412.0
 
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_71gms")
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+flat = true
+
 [node name="Menu_principal" type="Button" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -136,7 +144,7 @@ theme = ExtResource("6_71gms")
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_g2axc")
 theme_override_font_sizes/font_size = 25
-text = "Menu Principal"
+text = "MAIN MENU"
 flat = true
 
 [node name="Quit Game" type="Button" parent="VBoxContainer"]
@@ -190,5 +198,6 @@ theme_override_constants/outline_size = 30
 theme_override_font_sizes/font_size = 50
 text = "❤"
 
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu_principal" to="." method="_on_menu_principal_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]

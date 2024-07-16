@@ -24,7 +24,7 @@ var msg_queues: Dictionary = {
 		
 		"Ao acertar os Bonecos de Neve, perceba que\naparece um coração acima de sua cabeça\nsignificando que o acertou, seu obejtivo\né acertar os dois bonecos para enfim\npassar de fase.",
 		
-		"Parabens, vc finalmente conseguiu passar\npelo Tutorial!!!\nPressione (Novo nivel para avançar.)"
+		"Parabens, você finalmente conseguiu passar\npelo Tutorial!!!\nPressione (Novo nivel para avançar.)"
 	
 	],
 }
