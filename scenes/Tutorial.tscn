@@ -650,12 +650,11 @@ anchor_right = -0.0851485
 anchor_bottom = -0.171123
 
 [node name="ContinueButton" type="Button" parent="conteiner_box_dialog"]
-visible = false
-offset_left = -0.503939
-offset_top = -53.7459
-offset_right = 250.496
-offset_bottom = 0.254112
-scale = Vector2(0.3, 0.3)
+offset_left = 9.07084
+offset_top = -52.3316
+offset_right = 260.071
+offset_bottom = 1.66844
+scale = Vector2(0.2, 0.2)
 theme = ExtResource("19_yd8ol")
 theme_override_colors/font_color = Color(0.796135, 0, 0.125903, 1)
 theme_override_constants/outline_size = 8
@@ -666,20 +665,18 @@ text = "Continue
 flat = true
 
 [node name="SkipButton" type="Button" parent="conteiner_box_dialog"]
-visible = false
-offset_left = -80.6299
-offset_top = -55.1602
-offset_right = 165.37
-offset_bottom = -1.16024
-scale = Vector2(0.3, 0.3)
+offset_left = -77.0
+offset_top = -56.0
+offset_right = 309.0
+offset_bottom = 44.0
+scale = Vector2(0.2, 0.2)
 theme = ExtResource("19_yd8ol")
 theme_override_colors/font_color = Color(0.796135, 0, 0.125903, 1)
 theme_override_colors/font_hover_color = Color(0.521569, 0.858824, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("20_03quq")
 theme_override_font_sizes/font_size = 50
-text = "Skip
-
+text = "Próximo Nivel
 "
 flat = true
 

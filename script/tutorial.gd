@@ -22,6 +22,5 @@ func _process(delta):
 func _on_skip_button_pressed():
 	pass
 
-
 func _on_proximo_nivel_button_pressed():
 	pass 
