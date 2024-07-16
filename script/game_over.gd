@@ -14,7 +14,7 @@ func _process(delta):
 	cartasconquitadas_shadow.text = "Cartas desbloqueadas: " + " " +str(Global.cartasDesbloqueadas)
 	
 func _on_menu_principal_pressed():
-	get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+	Global.TransitonToScene("res://scenes/menu_principal.tscn")
 
 func _on_quit_game_pressed():
 	get_tree().quit()

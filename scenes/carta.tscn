@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://cf5yfq7645ms2"]
 
-[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta gelada.png" id="1_jhfjl"]
+[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta e estilingue/carta gelada.png" id="1_jhfjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4i7ur"]
 size = Vector2(29, 20)

@@ -51,7 +51,7 @@ func _process(delta: float):
 			emit_signal("transition_finished")
 		else:
 			# A transição de fechamento terminou, troque de cena
-			get_tree().change_scene_to_file(next_scene_path)
+			Global.transitionToScene(next_scene_path)
 
 func change_scene(scene_path: String):
 	# Inicia a transição de fechamento
