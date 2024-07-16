@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3clmd27hdq04"]
+
+[ext_resource type="Texture2D" uid="uid://b3op5fg5d10u0" path="res://assets/construções pelo mapa/contrução.webp" id="2_esgm0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6fyp"]
+size = Vector2(177, 26)
+
+[node name="moviment_platform" type="Node2D"]
+
+[node name="platform" type="AnimatableBody2D" parent="."]
+
+[node name="Contrução" type="Sprite2D" parent="platform"]
+position = Vector2(-1, 0.874999)
+scale = Vector2(2.25581, 0.81383)
+texture = ExtResource("2_esgm0")
+region_enabled = true
+region_rect = Rect2(752.1, 310.3, 86.9, 47.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(-3.5, 0)
+shape = SubResource("RectangleShape2D_c6fyp")
+one_way_collision = true

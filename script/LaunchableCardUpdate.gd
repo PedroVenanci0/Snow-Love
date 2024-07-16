@@ -32,7 +32,7 @@ func _process(delta):
 		$CollisionShape2D.set_deferred("disabled", true)
 	elif global_position.y < 260 and Global.sucessful:
 		$CollisionShape2D.set_deferred("disabled", false)
-    
+	
 		
 	if  Global.sucessful and trail == null:
 		show_trail()
