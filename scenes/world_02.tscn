@@ -424,7 +424,6 @@ position = Vector2(464, 161)
 [node name="Bloco7" parent="Constructs" instance=ExtResource("13_3qvha")]
 position = Vector2(489, 147)
 rotation = -1.53919
-scale = Vector2(1, 1)
 
 [node name="CuteSnows" type="Node2D" parent="."]
 

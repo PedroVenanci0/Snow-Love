@@ -7,7 +7,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	label_vitoria.text = str(Global.numberCards)
+	label_vitoria.text = str(Global.cartasDesbloqueadas)
 
 func _on_button_menu_princiapl_pressed():
 	Global.TransitonToScene("res://scenes/menu_principal.tscn")
