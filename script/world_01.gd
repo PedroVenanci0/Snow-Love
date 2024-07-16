@@ -1,11 +1,16 @@
 extends Node2D
 
+@onready var amor_pixelado = $Sounds/amor_pixelado
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.playerLoving = 0
 	Global.playerInTheScene = 0
 	Global.numberCards = 6
+
+	amor_pixelado.playing = true
+
 	Global.restart = "res://scenes/world_01.tscn"
 
 

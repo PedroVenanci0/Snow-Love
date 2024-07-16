@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://viibv8qbhc6y"]
+[gd_scene load_steps=24 format=3 uid="uid://viibv8qbhc6y"]
 
 [ext_resource type="Script" path="res://script/world_01.gd" id="1_gp3k2"]
 [ext_resource type="Texture2D" uid="uid://cbtsf8m7gbhhs" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="2_em15f"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cnk01usi4jhcc" path="res://scenes/hud_cards.tscn" id="15_vjcj5"]
 [ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="17_rafjd"]
 [ext_resource type="PackedScene" uid="uid://bvxabrpqnao5k" path="res://scenes/scene de pause.tscn" id="18_f5fuy"]
+[ext_resource type="PackedScene" uid="uid://dugxn5ug0161i" path="res://scenes/sounds.tscn" id="19_xlqjb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ids8"]
 texture = ExtResource("2_em15f")
@@ -393,4 +394,8 @@ rotation = -1.55897
 
 [node name="SceneDePause" parent="." instance=ExtResource("18_f5fuy")]
 
+[node name="Sounds" parent="." instance=ExtResource("19_xlqjb")]
+
 [connection signal="pressed" from="HUD_cards/Button" to="." method="_on_button_pressed"]
+
+[editable path="Sounds"]

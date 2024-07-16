@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bncj5vhf8bkgg"]
+[gd_scene load_steps=25 format=3 uid="uid://bncj5vhf8bkgg"]
 
 [ext_resource type="Texture2D" uid="uid://cbtsf8m7gbhhs" path="res://assets/world/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_gf1v3"]
 [ext_resource type="Script" path="res://script/world_02.gd" id="1_vnydi"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cnk01usi4jhcc" path="res://scenes/hud_cards.tscn" id="15_s18pl"]
 [ext_resource type="PackedScene" uid="uid://bw1j6lxhi1j5p" path="res://scenes/square_block.tscn" id="16_ta4sg"]
 [ext_resource type="PackedScene" uid="uid://bvxabrpqnao5k" path="res://scenes/scene de pause.tscn" id="19_0srik"]
+[ext_resource type="PackedScene" uid="uid://dugxn5ug0161i" path="res://scenes/sounds.tscn" id="20_7k0qw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41fso"]
 texture = ExtResource("1_gf1v3")
@@ -441,4 +442,11 @@ position = Vector2(214, -1)
 
 [node name="SceneDePause" parent="." instance=ExtResource("19_0srik")]
 
+[node name="Sounds" parent="." instance=ExtResource("20_7k0qw")]
+
+[node name="Boneco_de_neve" parent="Sounds" index="2"]
+volume_db = -17.828
+
 [connection signal="pressed" from="HUD_cards/Button" to="HUD_cards/Button" method="_on_pressed"]
+
+[editable path="Sounds"]
