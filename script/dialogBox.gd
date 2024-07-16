@@ -1,10 +1,12 @@
 extends Node2D
 
 @onready var text = $TextureRect/Text
+
 @onready var timer = $Timer
 
-@onready var skip_button = $"../SkipButton"
 @onready var continue_button = $"../ContinueButton"
+@onready var skip_button = $"../SkipButton"
+
 @onready var proximo_nivel_button = $"../ProximoNivelButton"
 
 @onready var color_rect = $"../ColorRect"
@@ -16,9 +18,7 @@ var verificacaoUnica = 1
 var msg_queues: Dictionary = {
 	"Tutorial": [
 		"Olá, preparamos um pequeno tutorial para\nensinar você a entragar mensagens de amor\ne aquecer esse mundo gelado...
-		
-		(Pressione ENTER para passar a mensagem...)",
-		"Caso não queira passar pelo tutorial\ne já saiba como conseguir um amor,\npressione o botão (Skip); caso contrário,\npressione (Continue).",
+		(Caso queira pular o Tutorial, basta\nclicar no botão 'Próximo Nivel')",
 		
 		"Usando o cursos do mouse, click e arraste\nna tela para impulsionar a carta em direção\nos bonecos de neve, encontrados nas\nplataformas.",
 		
@@ -27,35 +27,6 @@ var msg_queues: Dictionary = {
 		"Parabens, vc finalmente conseguiu passar\npelo Tutorial!!!\nPressione (Novo nivel para avançar.)"
 	
 	],
-	"MostrandoCartas": [
-		"
-
-Num cantinho de inverno, onde a neve cai suave,
-
-
-Uma bola de neve encontrou uma carta, um suave enxave.
-
-
-Era um bilhete de amor, escrito com tinta de calor,
-
-
-Que derreteu seu coração gelado, sem temor.
-
-
-Deslizou pela salinha, à procura do autor querido,
-
-
-Encontrou outra bola de neve, o destino foi cumprido.
-
-
-Juntos, deslizaram pelo espaço, sem medo de se quebrar,
-
-
-Com cartas de amor que os aqueceram, num eterno amar.",
-
-		"Mensagem 2 da cena 2..."
-	],
-	
 }
 
 func _ready():
