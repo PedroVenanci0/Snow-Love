@@ -20,7 +20,7 @@ func _process(delta):
 	pass
 
 func _on_skip_button_pressed():
-	pass
+	Global.TransitonToScene("res://scenes/world_01.tscn")
 
 func _on_proximo_nivel_button_pressed():
-	pass 
+	Global.TransitonToScene("res://scenes/world_01.tscn")

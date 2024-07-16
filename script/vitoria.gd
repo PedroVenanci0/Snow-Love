@@ -10,4 +10,4 @@ func _process(delta):
 	label_vitoria.text = str(Global.numberCards)
 
 func _on_button_menu_princiapl_pressed():
-	get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+	Global.TransitonToScene("res://scenes/menu_principal.tscn")

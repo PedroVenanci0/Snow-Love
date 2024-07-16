@@ -21,7 +21,7 @@ func _process(delta):
 		carta_gelada_world_02.modulate = Color(1, 1, 1, 1)
 		
 func _on_return_enu_pressed():
-	get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+	Global.TransitonToScene("res://scenes/menu_principal.tscn")
 
 func _on_button_card_01_pressed():
 	if Global.cartasDesbloqueadas == 1:
