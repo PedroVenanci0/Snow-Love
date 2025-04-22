@@ -1,0 +1,175 @@
+[gd_scene load_steps=8 format=3 uid="uid://co0v55qy8yuhh"]
+
+[ext_resource type="Script" path="res://script/menu_principal.gd" id="1_fb65p"]
+[ext_resource type="Texture2D" uid="uid://dwh703nqocjf" path="res://assets/tela de inicio/bg.jpeg" id="2_xeujx"]
+[ext_resource type="Shader" path="res://shader/rain_and_snow_shader.gdshader" id="3_kn5e7"]
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="4_xgp1d"]
+[ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="5_pi8yq"]
+[ext_resource type="PackedScene" uid="uid://dugxn5ug0161i" path="res://scenes/sounds.tscn" id="6_17jeb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_duslc"]
+shader = ExtResource("3_kn5e7")
+shader_parameter/snow_amount = 200.0
+shader_parameter/near_snow_length = 0.01
+shader_parameter/far_snow_length = 0.01
+shader_parameter/near_snow_width = 1.0
+shader_parameter/far_snow_width = 0.775
+shader_parameter/near_snow_transparency = 0.295
+shader_parameter/far_snow_transparency = 0.675
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/base_snow_speed = 0.01
+shader_parameter/additional_snow_speed = 0.08
+shader_parameter/slant = 0.0650001
+
+[node name="menu_principal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fb65p")
+
+[node name="Bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -1.0
+offset_right = -731.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.60574, 1.04001)
+texture = ExtResource("2_xeujx")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Bg"]
+material = SubResource("ShaderMaterial_duslc")
+layout_mode = 0
+offset_left = 3.0
+offset_right = 2401.0
+offset_bottom = 2278.0
+scale = Vector2(0.500786, 0.457122)
+color = Color(1, 1, 1, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 43.0
+offset_right = 100.0
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="Start Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.213007, 0.678855, 0.811345, 1)
+theme_override_colors/font_pressed_color = Color(0.397482, 1.39579e-06, 6.97896e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_xgp1d")
+theme_override_font_sizes/font_size = 40
+text = "Start Game"
+flat = true
+
+[node name="Cartas desbloqueadas" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.678431, 0.811765, 1)
+theme_override_colors/font_pressed_color = Color(0.397482, 1.39579e-06, 6.97896e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.986752, 0.986752, 0.986752, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_xgp1d")
+theme_override_font_sizes/font_size = 25
+text = "unlocked cards"
+flat = true
+
+[node name="Quit Gmae" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("5_pi8yq")
+theme_override_colors/font_color = Color(0.213007, 0.678855, 0.811345, 1)
+theme_override_colors/font_pressed_color = Color(0.397482, 1.39579e-06, 6.97896e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_xgp1d")
+theme_override_font_sizes/font_size = 25
+text = "Quit Game"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.522122, 0.857016, 1, 1)
+z_index = 2
+layout_mode = 0
+offset_left = 344.0
+offset_top = 270.0
+offset_right = 1509.0
+offset_bottom = 449.0
+theme_override_colors/font_shadow_color = Color(0.00820202, 0.00820202, 0.00820202, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("4_xgp1d")
+theme_override_font_sizes/font_size = 200
+text = "Snow L    ve"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1035.0
+offset_top = 277.0
+offset_right = 1310.0
+offset_bottom = 477.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 100
+theme_override_fonts/font = ExtResource("4_xgp1d")
+theme_override_font_sizes/font_size = 180
+text = "❤"
+
+[node name="Label3" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 346.0
+offset_top = 280.0
+offset_right = 1511.0
+offset_bottom = 459.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 100
+theme_override_fonts/font = ExtResource("4_xgp1d")
+theme_override_font_sizes/font_size = 200
+text = "Snow L    ve"
+
+[node name="Sounds" parent="." instance=ExtResource("6_17jeb")]
+
+[node name="amor_pixelado" parent="Sounds" index="0"]
+volume_db = -3.962
+autoplay = true
+
+[node name="Boneco_de_neve" parent="Sounds" index="2"]
+volume_db = -11.886
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Cartas desbloqueadas" to="." method="_on_cartas_desbloqueadas_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit Gmae" to="." method="_on_quit_gmae_pressed"]
+
+[editable path="Sounds"]

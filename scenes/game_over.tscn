@@ -1,0 +1,203 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnd83nsc4ba31"]
+
+[ext_resource type="Script" path="res://script/game_over.gd" id="1_bu6yr"]
+[ext_resource type="Texture2D" uid="uid://djayte3768086" path="res://assets/game_over/_4d7d0b74-1c4b-4788-9a1d-964cad4911f5.jpg" id="1_jyex5"]
+[ext_resource type="Texture2D" uid="uid://bww224ft56htk" path="res://assets/carta e estilingue/3848175c4925365a17b89d7092519420.jpg" id="1_wlhiw"]
+[ext_resource type="Texture2D" uid="uid://dmgk2qxtp3xx2" path="res://assets/game_over/coração.png" id="2_fa1re"]
+[ext_resource type="Texture2D" uid="uid://blbhyvo6m2u0g" path="res://assets/construções pelo mapa/contrução_gelo_02.webp" id="3_jjywe"]
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="5_g2axc"]
+[ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="6_71gms"]
+[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta e estilingue/carta gelada.png" id="7_t1qom"]
+
+[node name="Game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bu6yr")
+
+[node name="Fundo_moldura" type="Sprite2D" parent="."]
+position = Vector2(1489, 549)
+scale = Vector2(2.35197, 2.43457)
+texture = ExtResource("1_wlhiw")
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -957.0
+offset_top = -541.0
+offset_right = 184.0
+offset_bottom = 543.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jyex5")
+expand_mode = 1
+
+[node name="corações" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="corações"]
+position = Vector2(648.692, 288.045)
+rotation = 0.271598
+scale = Vector2(0.6316, 0.598894)
+texture = ExtResource("2_fa1re")
+region_enabled = true
+region_rect = Rect2(273.45, 180.226, 177.156, 162.984)
+
+[node name="Sprite2D3" type="Sprite2D" parent="corações"]
+position = Vector2(353.389, 275.023)
+rotation = -0.369204
+scale = Vector2(0.561182, 0.549425)
+texture = ExtResource("2_fa1re")
+region_enabled = true
+region_rect = Rect2(273.45, 180.226, 177.156, 162.984)
+
+[node name="Sprite2D4" type="Sprite2D" parent="corações"]
+position = Vector2(498.683, 304.018)
+rotation = 0.121665
+scale = Vector2(0.374529, 0.375134)
+texture = ExtResource("2_fa1re")
+region_enabled = true
+region_rect = Rect2(273.45, 180.226, 177.156, 162.984)
+
+[node name="moldura" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="moldura"]
+position = Vector2(1103, 544.5)
+scale = Vector2(1, 4.41176)
+texture = ExtResource("3_jjywe")
+region_enabled = true
+region_rect = Rect2(208.923, 515.749, 95.8273, 255.39)
+
+[node name="Sprite2D4" type="Sprite2D" parent="moldura"]
+position = Vector2(1874, 542)
+scale = Vector2(1, 4.41176)
+texture = ExtResource("3_jjywe")
+region_enabled = true
+region_rect = Rect2(208.923, 515.749, 95.8273, 255.39)
+
+[node name="Sprite2D3" type="Sprite2D" parent="moldura"]
+position = Vector2(1488.86, 35.0078)
+rotation = 1.57179
+scale = Vector2(0.862714, 2.79185)
+texture = ExtResource("3_jjywe")
+region_enabled = true
+region_rect = Rect2(208.923, 515.749, 95.8273, 255.39)
+
+[node name="Sprite2D5" type="Sprite2D" parent="moldura"]
+position = Vector2(1491, 1052)
+rotation = 1.57179
+scale = Vector2(0.862714, 2.79185)
+texture = ExtResource("3_jjywe")
+region_enabled = true
+region_rect = Rect2(208.923, 515.749, 95.8273, 255.39)
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 1263.0
+offset_top = 216.0
+offset_right = 1810.0
+offset_bottom = 279.0
+theme_override_colors/font_color = Color(0, 0.831373, 0.988235, 1)
+theme_override_constants/shadow_offset_y = 20
+theme_override_fonts/font = ExtResource("5_g2axc")
+theme_override_font_sizes/font_size = 70
+text = "End  of  L   ve"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1263.0
+offset_top = 216.5
+offset_right = 1810.0
+offset_bottom = 279.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("5_g2axc")
+theme_override_font_sizes/font_size = 70
+text = "End  of  L   ve"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1385.0
+offset_top = 344.0
+offset_right = 1573.0
+offset_bottom = 412.0
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_71gms")
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+flat = true
+
+[node name="Menu_principal" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_71gms")
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_g2axc")
+theme_override_font_sizes/font_size = 25
+text = "MAIN MENU"
+flat = true
+
+[node name="Quit Game" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_71gms")
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_g2axc")
+theme_override_font_sizes/font_size = 25
+text = "Quit Game
+"
+flat = true
+
+[node name="Carta" type="Sprite2D" parent="."]
+position = Vector2(1202, 514.25)
+scale = Vector2(2.875, 2.77083)
+texture = ExtResource("7_t1qom")
+region_enabled = true
+region_rect = Rect2(204.889, 212.55, 32.819, 24.2159)
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 507.25
+offset_right = 1500.0
+offset_bottom = 530.25
+theme_override_colors/font_color = Color(0.868985, 0.868985, 0.868985, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_g2axc")
+theme_override_font_sizes/font_size = 20
+text = "Cartas desbloqueadas : "
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 507.25
+offset_right = 1500.0
+offset_bottom = 530.25
+theme_override_colors/font_color = Color(0, 0.831373, 0.988235, 1)
+theme_override_fonts/font = ExtResource("5_g2axc")
+theme_override_font_sizes/font_size = 20
+text = "Cartas desbloqueadas : "
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1573.0
+offset_top = 225.0
+offset_right = 1642.0
+offset_bottom = 294.0
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 50
+text = "❤"
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu_principal" to="." method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]

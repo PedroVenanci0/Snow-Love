@@ -1,0 +1,172 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4gx1bneo4j0k"]
+
+[ext_resource type="Script" path="res://script/Mostrando_cartas.gd" id="1_3kvt7"]
+[ext_resource type="Texture2D" uid="uid://dep45oy3gj2fp" path="res://assets/tela de cartas/fundo.jpg" id="1_e35q2"]
+[ext_resource type="Shader" path="res://shader/rain_and_snow_shader.gdshader" id="2_gfqww"]
+[ext_resource type="Texture2D" uid="uid://bb8625sbhk3vc" path="res://assets/tela de cartas/3385744-calota-de-gelo-fixada-vetor-removebg-preview.png" id="3_7krvh"]
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="5_crqko"]
+[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta e estilingue/carta gelada.png" id="6_bkxnb"]
+[ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="7_1mxxe"]
+[ext_resource type="PackedScene" uid="uid://b16isugcku6h" path="res://scenes/Carta_escrita.tscn" id="9_brwpe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rcag"]
+shader = ExtResource("2_gfqww")
+shader_parameter/snow_amount = 200.0
+shader_parameter/near_snow_length = 0.01
+shader_parameter/far_snow_length = 0.01
+shader_parameter/near_snow_width = 1.0
+shader_parameter/far_snow_width = 0.775
+shader_parameter/near_snow_transparency = 0.295
+shader_parameter/far_snow_transparency = 0.675
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/base_snow_speed = 0.01
+shader_parameter/additional_snow_speed = 0.08
+shader_parameter/slant = 0.0650001
+
+[node name="MostrandoCartas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kvt7")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(958.5, 542)
+scale = Vector2(1.25245, 1.10204)
+texture = ExtResource("1_e35q2")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7rcag")
+layout_mode = 0
+offset_left = 3.0
+offset_right = 3831.0
+offset_bottom = 2278.0
+scale = Vector2(0.500786, 0.457122)
+color = Color(1, 1, 1, 0)
+
+[node name="moldura" type="Node2D" parent="."]
+
+[node name="moldura" type="Sprite2D" parent="moldura"]
+position = Vector2(250, 55)
+texture = ExtResource("3_7krvh")
+region_enabled = true
+region_rect = Rect2(1.28366, 334.918, 500.723, 161.051)
+
+[node name="moldura2" type="Sprite2D" parent="moldura"]
+position = Vector2(753, 63)
+texture = ExtResource("3_7krvh")
+region_enabled = true
+region_rect = Rect2(0, 53.8102, 503.289, 166.908)
+
+[node name="moldura3" type="Sprite2D" parent="moldura"]
+position = Vector2(1235, 47)
+texture = ExtResource("3_7krvh")
+region_enabled = true
+region_rect = Rect2(2.74777, 320.277, 494.866, 175.692)
+
+[node name="moldura4" type="Sprite2D" parent="moldura"]
+position = Vector2(1693, 63)
+texture = ExtResource("3_7krvh")
+region_enabled = true
+region_rect = Rect2(0, 53.8102, 503.289, 166.908)
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 168.0
+offset_right = 755.0
+offset_bottom = 222.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("5_crqko")
+theme_override_font_sizes/font_size = 60
+text = "unlocked cards:"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 168.0
+offset_right = 78.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0, 0.831373, 0.988235, 1)
+theme_override_fonts/font = ExtResource("5_crqko")
+theme_override_font_sizes/font_size = 60
+text = "unlocked cards:"
+
+[node name="CartaGelada_world_01" type="Sprite2D" parent="."]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(280, 463)
+scale = Vector2(4.81429, 4.54167)
+texture = ExtResource("6_bkxnb")
+region_enabled = true
+region_rect = Rect2(203.123, 212.569, 35.2864, 24.4898)
+
+[node name="CartaGelada_world_02" type="Sprite2D" parent="."]
+modulate = Color(0.443137, 0.443137, 0.443137, 1)
+position = Vector2(683, 459)
+scale = Vector2(4.81429, 4.54167)
+texture = ExtResource("6_bkxnb")
+region_enabled = true
+region_rect = Rect2(203.123, 212.569, 35.2864, 24.4898)
+
+[node name="CartaGelada_world_03" type="Sprite2D" parent="."]
+modulate = Color(0.443137, 0.443137, 0.443137, 1)
+position = Vector2(276, 727)
+scale = Vector2(4.81429, 4.54167)
+texture = ExtResource("6_bkxnb")
+region_enabled = true
+region_rect = Rect2(203.123, 212.569, 35.2864, 24.4898)
+
+[node name="Return_menu" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 42.0
+offset_top = 65.0
+offset_right = 414.0
+offset_bottom = 142.0
+theme = ExtResource("7_1mxxe")
+theme_override_colors/font_color = Color(0, 0.831373, 0.988235, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("5_crqko")
+theme_override_font_sizes/font_size = 50
+text = "Menu Principal"
+flat = true
+
+[node name="ButtonCard_01" type="Button" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 415.0
+offset_right = 355.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 20
+flat = true
+
+[node name="ButtonCard_02" type="Button" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 679.0
+offset_right = 350.0
+offset_bottom = 777.0
+theme_override_font_sizes/font_size = 20
+flat = true
+
+[node name="ButtonCard_03" type="Button" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 411.0
+offset_right = 759.0
+offset_bottom = 509.0
+theme_override_font_sizes/font_size = 20
+flat = true
+
+[node name="carta_01" parent="." instance=ExtResource("9_brwpe")]
+offset_left = 804.0
+offset_top = 457.0
+offset_right = 804.0
+offset_bottom = 457.0
+scale = Vector2(1e-05, 1e-05)
+
+[connection signal="pressed" from="Return_menu" to="." method="_on_return_enu_pressed"]
+[connection signal="pressed" from="ButtonCard_01" to="." method="_on_button_card_01_pressed"]

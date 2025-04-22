@@ -1,0 +1,237 @@
+[gd_scene load_steps=10 format=3 uid="uid://0spptis28ld2"]
+
+[ext_resource type="Script" path="res://script/vitoria.gd" id="1_2m3n4"]
+[ext_resource type="Texture2D" uid="uid://b4wd76rjujxil" path="res://assets/vitoria/snowy-background-hd9f6389szubhlwd.jpg" id="1_c7olj"]
+[ext_resource type="Shader" path="res://shader/rain_and_snow_shader.gdshader" id="2_joax4"]
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="3_dst5e"]
+[ext_resource type="Texture2D" uid="uid://dmgk2qxtp3xx2" path="res://assets/game_over/coração.png" id="4_e7psq"]
+[ext_resource type="Texture2D" uid="uid://850s0q4v8b83" path="res://assets/player/Ice Elemental Sprite Sheet.png" id="5_kkck4"]
+[ext_resource type="Texture2D" uid="uid://cmjdlh5jdyfg4" path="res://assets/carta e estilingue/carta gelada.png" id="6_4kylb"]
+[ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="8_iaros"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mm7at"]
+shader = ExtResource("2_joax4")
+shader_parameter/snow_amount = 200.0
+shader_parameter/near_snow_length = 0.01
+shader_parameter/far_snow_length = 0.01
+shader_parameter/near_snow_width = 1.0
+shader_parameter/far_snow_width = 0.775
+shader_parameter/near_snow_transparency = 0.295
+shader_parameter/far_snow_transparency = 0.675
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/base_snow_speed = 0.01
+shader_parameter/additional_snow_speed = 0.08
+shader_parameter/slant = 0.0650001
+
+[node name="Vitoria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2m3n4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 1922.0
+offset_bottom = 1077.0
+texture = ExtResource("1_c7olj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_mm7at")
+layout_mode = 0
+offset_left = 3.0
+offset_right = 3841.0
+offset_bottom = 2347.0
+scale = Vector2(0.500786, 0.457122)
+color = Color(1, 1, 1, 0)
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 69.0
+offset_right = 39.0
+offset_bottom = 109.0
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 90.0
+offset_right = 1931.0
+offset_bottom = 180.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("3_dst5e")
+theme_override_font_sizes/font_size = 90
+text = "Parabens você conquistou seu amor"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 92.0
+offset_right = 1933.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0.211765, 0.780392, 0.988235, 1)
+theme_override_fonts/font = ExtResource("3_dst5e")
+theme_override_font_sizes/font_size = 90
+text = "Parabens você conquistou seu amor"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 347.0
+offset_right = 981.0
+offset_bottom = 389.0
+theme_override_colors/font_color = Color(0.211765, 0.780392, 0.988235, 1)
+theme_override_colors/font_outline_color = Color(0.956863, 0.956863, 0.956863, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_dst5e")
+theme_override_font_sizes/font_size = 50
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 344.0
+offset_right = 1919.0
+offset_bottom = 439.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("3_dst5e")
+theme_override_font_sizes/font_size = 50
+text = "total de cartas conquistadas: 
+
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 343.0
+offset_right = 1921.0
+offset_bottom = 438.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_dst5e")
+theme_override_font_sizes/font_size = 50
+text = "total de cartas conquistadas: 
+
+"
+
+[node name="Coração2" type="Sprite2D" parent="."]
+position = Vector2(1848, 183)
+scale = Vector2(0.484375, 0.510526)
+texture = ExtResource("4_e7psq")
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="Coração" type="Sprite2D" parent="."]
+position = Vector2(69, 176)
+scale = Vector2(0.484375, 0.510526)
+texture = ExtResource("4_e7psq")
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="IceElementalSpriteSheet" type="Sprite2D" parent="."]
+position = Vector2(1121, 965)
+scale = Vector2(20, 20)
+texture = ExtResource("5_kkck4")
+region_enabled = true
+region_rect = Rect2(9.5639, 20.2647, 11.4769, 12.0702)
+
+[node name="Coração3" type="Sprite2D" parent="."]
+position = Vector2(1091, 962)
+rotation = -0.0389475
+scale = Vector2(0.4, 0.422)
+texture = ExtResource("4_e7psq")
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="Coração4" type="Sprite2D" parent="."]
+position = Vector2(1155, 960)
+rotation = -0.00260857
+scale = Vector2(0.4, 0.423)
+texture = ExtResource("4_e7psq")
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="IceElementalSpriteSheet2" type="Sprite2D" parent="."]
+position = Vector2(1365, 967)
+scale = Vector2(20, 20)
+texture = ExtResource("5_kkck4")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(9.5639, 20.2647, 11.4769, 12.0702)
+
+[node name="Coração5" type="Sprite2D" parent="."]
+position = Vector2(1335, 964)
+rotation = -0.0389475
+scale = Vector2(0.4, 0.422)
+texture = ExtResource("4_e7psq")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="Coração7" type="Sprite2D" parent="."]
+position = Vector2(1063, 770)
+rotation = -0.248367
+scale = Vector2(0.4, 0.422)
+texture = ExtResource("4_e7psq")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="Coração8" type="Sprite2D" parent="."]
+position = Vector2(1167, 798)
+rotation = 0.311566
+scale = Vector2(0.4, 0.422)
+texture = ExtResource("4_e7psq")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="Coração9" type="Sprite2D" parent="."]
+position = Vector2(1314.93, 774.555)
+rotation = -0.225158
+scale = Vector2(0.4, 0.422)
+texture = ExtResource("4_e7psq")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="Coração10" type="Sprite2D" parent="."]
+position = Vector2(1418.93, 802.555)
+rotation = 0.356523
+scale = Vector2(0.4, 0.422)
+texture = ExtResource("4_e7psq")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="Coração6" type="Sprite2D" parent="."]
+position = Vector2(1399, 962)
+rotation = -0.00260857
+scale = Vector2(0.4, 0.423)
+texture = ExtResource("4_e7psq")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(52.4614, 156.205, 192.923, 190.974)
+
+[node name="CartaGelada" type="Sprite2D" parent="."]
+position = Vector2(75, 359)
+scale = Vector2(3, 3)
+texture = ExtResource("6_4kylb")
+region_enabled = true
+region_rect = Rect2(204.617, 209.869, 33.9278, 28.9158)
+
+[node name="ButtonMenuPrinciapl" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1540.0
+offset_top = 995.0
+offset_right = 1902.0
+offset_bottom = 1049.0
+theme = ExtResource("8_iaros")
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_dst5e")
+theme_override_font_sizes/font_size = 50
+text = "Menu Principal"
+flat = true
+
+[connection signal="pressed" from="ButtonMenuPrinciapl" to="." method="_on_button_menu_princiapl_pressed"]

@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cf75q256oi40t"]
+
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="1_iyfr1"]
+
+[resource]
+Button/colors/font_color = Color(0.52549, 0.713726, 0.980392, 1)
+Button/colors/font_hover_color = Color(1, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.397482, 1.39579e-06, 6.97896e-07, 1)
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_iyfr1")

@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvxabrpqnao5k"]
+
+[ext_resource type="Script" path="res://script/scene de pause.gd" id="1_i3aw5"]
+[ext_resource type="Theme" uid="uid://cf75q256oi40t" path="res://shader/theme_button.tres" id="1_s7jdm"]
+
+[node name="SceneDePause" type="CanvasLayer"]
+script = ExtResource("1_i3aw5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.333333)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -33.0
+offset_right = 46.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="ButtonResume" type="Button" parent="VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme = ExtResource("1_s7jdm")
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 40
+text = "Resume"
+flat = true
+
+[node name="ButtonQuitGame" type="Button" parent="VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme = ExtResource("1_s7jdm")
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 40
+text = "Quit Game"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuitGame" to="." method="_on_button_quit_game_pressed"]

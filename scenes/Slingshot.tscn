@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwc81ubq57hyl"]
+
+[ext_resource type="Script" path="res://script/Slingshot.gd" id="1_l5v33"]
+[ext_resource type="Texture2D" uid="uid://pyg4is4rw2wh" path="res://assets/carta e estilingue/EstilingueParte1.png" id="2_i15c6"]
+[ext_resource type="Texture2D" uid="uid://cyk3uj7wsmoe" path="res://assets/carta e estilingue/EstilingueParte2.png" id="3_dvl6v"]
+
+[node name="Slingshot" type="Node2D"]
+script = ExtResource("1_l5v33")
+
+[node name="SlingshotPart1" type="Node2D" parent="."]
+position = Vector2(3, 21)
+scale = Vector2(2, 2)
+
+[node name="Back" type="Sprite2D" parent="SlingshotPart1"]
+texture_filter = 1
+texture = ExtResource("2_i15c6")
+
+[node name="Point" type="Marker2D" parent="SlingshotPart1"]
+position = Vector2(15.5, 1)
+
+[node name="Line2D" type="Line2D" parent="SlingshotPart1/Point"]
+visible = false
+points = PackedVector2Array(0, 0, -51, -1)
+width = 2.0
+default_color = Color(0.294118, 0.356863, 0.670588, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="SlingshotPart2" type="Node2D" parent="."]
+position = Vector2(3, 21)
+scale = Vector2(2, 2)
+
+[node name="Front" type="Sprite2D" parent="SlingshotPart2"]
+texture_filter = 1
+texture = ExtResource("3_dvl6v")
+
+[node name="Point" type="Marker2D" parent="SlingshotPart2"]
+position = Vector2(-11.5, 0.5)
+
+[node name="Line2D" type="Line2D" parent="SlingshotPart2/Point"]
+visible = false
+scale = Vector2(1, 0.75)
+points = PackedVector2Array(0, 0, -35, -1.33334)
+width = 2.0
+default_color = Color(0.301961, 0.65098, 1, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2

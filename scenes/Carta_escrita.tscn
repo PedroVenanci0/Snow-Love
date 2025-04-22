@@ -1,0 +1,113 @@
+[gd_scene load_steps=3 format=3 uid="uid://b16isugcku6h"]
+
+[ext_resource type="Texture2D" uid="uid://bw64bdsticyn6" path="res://assets/tela de cartas/papel-de-carta-azul-corac3a7c3a3o-blog-artes-prontas.jpg" id="1_qd4ll"]
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="2_t2cr7"]
+
+[node name="carta" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 295.0
+offset_right = 4.0
+offset_bottom = 295.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -407.0
+offset_top = -307.0
+offset_right = 1511.0
+offset_bottom = 786.0
+
+[node name="escritaCarta" type="Sprite2D" parent="."]
+position = Vector2(712, 34)
+scale = Vector2(1, 1.01672)
+texture = ExtResource("1_qd4ll")
+region_enabled = true
+region_rect = Rect2(0, 0, 720, 812.713)
+
+[node name="Label2" type="Label" parent="escritaCarta"]
+offset_left = -341.0
+offset_top = -357.03
+offset_right = 322.0
+offset_bottom = 215.97
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_t2cr7")
+theme_override_font_sizes/font_size = 23
+text = "
+
+Num cantinho de inverno, onde a neve cai suave,
+
+
+Uma bola de neve encontrou uma carta, um suave enxave.
+
+
+Era um bilhete de amor, escrito com tinta de calor,
+
+
+Que derreteu seu coração gelado, sem temor.
+
+
+Deslizou pela salinha, à procura do autor querido,
+
+
+Encontrou outra bola de neve, o destino foi cumprido.
+
+
+Juntos, deslizaram pelo espaço, sem medo de se quebrar,
+
+
+Com cartas de amor que os aqueceram, num eterno amar."
+
+[node name="Label" type="Label" parent="escritaCarta"]
+offset_left = -340.0
+offset_top = -359.981
+offset_right = 323.0
+offset_bottom = 213.019
+theme_override_colors/font_color = Color(0, 0.552941, 1, 1)
+theme_override_fonts/font = ExtResource("2_t2cr7")
+theme_override_font_sizes/font_size = 23
+text = "
+
+Num cantinho de inverno, onde a neve cai suave,
+
+
+Uma bola de neve encontrou uma carta, um suave enxave.
+
+
+Era um bilhete de amor, escrito com tinta de calor,
+
+
+Que derreteu seu coração gelado, sem temor.
+
+
+Deslizou pela salinha, à procura do autor querido,
+
+
+Encontrou outra bola de neve, o destino foi cumprido.
+
+
+Juntos, deslizaram pelo espaço, sem medo de se quebrar,
+
+
+Com cartas de amor que os aqueceram, num eterno amar."
+
+[node name="Label4" type="Label" parent="escritaCarta"]
+offset_left = -339.0
+offset_top = -367.85
+offset_right = -154.0
+offset_bottom = -339.85
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_t2cr7")
+theme_override_font_sizes/font_size = 30
+text = "Amor Gelado"
+
+[node name="Label3" type="Label" parent="escritaCarta"]
+offset_left = -339.0
+offset_top = -368.833
+offset_right = -154.0
+offset_bottom = -340.833
+theme_override_colors/font_color = Color(0.541176, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_t2cr7")
+theme_override_font_sizes/font_size = 30
+text = "Amor Gelado"

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5g2umgw8fgr6"]
+
+[ext_resource type="Script" path="res://script/trialEfffect.gd" id="1_k54og"]
+
+[sub_resource type="Curve" id="Curve_r5ts7"]
+_data = [Vector2(0.0631579, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_nevy8"]
+colors = PackedColorArray(1, 0, 0, 0.45098, 1, 0, 0, 1)
+
+[node name="trialEfffect" type="Line2D"]
+show_behind_parent = true
+top_level = true
+z_index = -5
+width_curve = SubResource("Curve_r5ts7")
+gradient = SubResource("Gradient_nevy8")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("1_k54og")

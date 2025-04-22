@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1pa04jpbwj3e"]
+
+[ext_resource type="Script" path="res://script/dialogBox.gd" id="1_d8dep"]
+[ext_resource type="FontFile" uid="uid://iyo6ms8m752s" path="res://assets/fontes/snowtop_caps/SnowtopCaps.otf" id="3_14xk6"]
+
+[node name="dialogBox" type="Node2D"]
+script = ExtResource("1_d8dep")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 42.0
+offset_top = 157.0
+offset_right = 547.0
+offset_bottom = 344.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 85.0
+offset_top = 53.0
+offset_right = 403.0
+offset_bottom = 104.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0.796135, 0, 0.125903, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("3_14xk6")
+theme_override_font_sizes/font_size = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
